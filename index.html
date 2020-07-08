@@ -37,9 +37,33 @@
 </header>
 
 <!-- First Grid -->
-<div class="w3-padding-64 w3-container">
-  <div id = "display-panel" class="w3-container  w3-cell-middle">
-    <a> Halo Content</a>
+<div class="w3-padding-64 w3-container w3-cell-row">
+  <div id = "display-panel" class=" w3-container  w3-cell-middle w3-round">
+    <div class = "w3-bar w3-round">
+    <a id = 'panel-title' class = " w3-bar-item w3-round"> Halo Fileshare - Most Popular </a>
+    <div id = 'panel-title-legend' class = "w3-bar-item w3-round w3-right">
+
+      <label class = "sub-title" id = "sub-title-option-maps">Maps
+        <input class="w3-check" type="checkbox" checked="checked">
+      </label>
+      
+
+
+      <label class = "sub-title" id = "sub-title-option-gamemodes">Gamemodes
+        <input class="w3-check" type="checkbox" checked="checked">
+      </label>
+      
+
+      <label class = "sub-title" id = "sub-title-option-savegame">Savegames
+        <input class="w3-check" type="checkbox" checked="checked" >
+      </label>
+
+      <a  id = 'nav-item' class = "w3-btn w3-round"> See More</a>
+     
+
+    </div>
+  </div>
+    <div id = 'content-display'></div>
   </div>
 </div>
 
