@@ -68,11 +68,14 @@ body {
 
 
 #display-panel {
+    width: auto;
     color: aliceblue;
     background-color: #1C2848;
     margin-left: 10%;
     margin-right: 10%;
-    height: 50em;
+    padding-bottom: 10em;
+    margin-bottom: auto;
+    height: auto;
     padding: 10px;
 }
 
@@ -87,10 +90,6 @@ body {
     font-size: 18px;
 }
 
-#content-display {
-    margin-top: 0.5em;
-    margin-left: 0.5em;
-}
 
 
 #mapsTag{
@@ -101,4 +100,79 @@ body {
 
 .sub-title {
     margin-right: 1em;
+}
+
+/*** 
+
+CONTENT CARDS FONT PAGE --------------------------------------
+
+
+edit: don't forget to add reactive card titles/authors font- 
+size or  you'll get overflow!
+
+
+*/
+
+
+#card-display {
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    width: 470px;
+    height: auto;
+    padding: 0rem;
+}
+
+#upload-card-info {
+    border: 1px solid rgba(99, 161, 255, 0.493);
+}
+
+#upload-img-card {
+    position: relative;
+    border: 1px solid rgba(99, 161, 255, 0.493);
+    width: 470px;
+    height: auto;
+}
+
+
+#upload-author {
+    margin-top: 2%;
+}
+
+
+#upload-tag-game {
+    border: 1px solid black;
+    color: white;
+    background-color: green;
+    font-size: 18px;
+    z-index: 1;
+    position: absolute;
+}
+#upload-tag-filetype-gamemode {
+    border: 1px solid black;
+    color: white;
+    background-color: rgb(46, 46, 46);
+    font-size: 18px;
+    z-index: 1;
+    margin-top: 37px;
+    position: absolute;
+}
+
+#upload-tag-filetype-map {
+    border: 1px solid black;
+    color: white;
+    background-color: rgb(218, 176, 42);
+    font-size: 18px;
+    z-index: 1;
+    margin-top: 37px;
+    position: absolute;
+}
+
+#upload-tag-filetype-savegame {
+    border: 1px solid black;
+    color: white;
+    background-color: rgb(74, 134, 190);
+    font-size: 18px;
+    z-index: 1;
+    margin-top: 37px;
+    position: absolute;
 }
