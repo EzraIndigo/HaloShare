@@ -1,3 +1,14 @@
+
+:root{
+    /** Halo Color Pallet */
+    --main-bg-color: #2E3C6B;
+    --navbar-bg-color: #0E1933;
+    --nav-text-color: #FFEDE1;
+    --nav-highlight-color: #fa8452b6;
+}
+
+
+
 body,h1,h2,h3,h4,h5,h6 
 {
     font-family: "Lato", sans-serif;
@@ -5,7 +16,7 @@ body,h1,h2,h3,h4,h5,h6
 }
 
 body {
-    background-image: url("../img/background.jpg");
+    background-color: var(--main-bg-color);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -15,18 +26,35 @@ body {
     font-family: "Montserrat", sans-serif
 }
 
+
+.w3-input {
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.w3-bar-item {
+    margin-left: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
 .fa-anchor,.fa-coffee 
 {
     font-size:200px
 }
 
 .w3-bar {
-    background-color: #2d5897;
+    color: var(--nav-text-color);
+    background-color: var(--navbar-bg-color);
+    padding-bottom: 2px;
 }
 
-.w3-bar-item:hover {
-    background-color: #21406e !important;
-    border-bottom: 2px solid #4c7cc5;
+#nav-item:hover {
+    background-color: var(--nav-highlight-color) !important;
+    border-bottom: 4px solid #76a1e0 !important;
+    margin-bottom: -4px !important;
+    color: white !important;
 }
 
 #headerBanner {
@@ -35,4 +63,15 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     padding: 128px 52px;
+}
+
+
+
+#display-panel {
+    color: aliceblue;
+    background-color: #1C2848;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 50em;
+    padding: 10px;
 }
