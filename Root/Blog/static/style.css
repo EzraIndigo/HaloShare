@@ -1,0 +1,178 @@
+
+:root{
+    /** Halo Color Pallet */
+    --main-bg-color: #2E3C6B;
+    --navbar-bg-color: #0E1933;
+    --nav-text-color: #FFEDE1;
+    --nav-highlight-color: #faa352b6;
+}
+
+
+
+body,h1,h2,h3,h4,h5,h6 
+{
+    font-family: "Lato", sans-serif;
+
+}
+
+body {
+    background-color: var(--main-bg-color);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.w3-bar,h1,button 
+{
+    font-family: "Montserrat", sans-serif
+}
+
+
+.w3-input {
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.w3-bar-item {
+    margin-left: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.fa-anchor,.fa-coffee 
+{
+    font-size:200px
+}
+
+.w3-bar {
+    color: var(--nav-text-color);
+    background-color: var(--navbar-bg-color);
+    padding-bottom: 2px;
+}
+
+#nav-item:hover {
+    background-color: var(--nav-highlight-color) !important;
+    border-bottom: 3px solid #76a1e0 !important;
+    margin-bottom: -3px !important;
+    color: white !important;
+}
+
+#headerBanner {
+    background-image: url("../img/h3bannerTemp.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 128px 52px;
+}
+
+
+
+#display-panel {
+    width: auto;
+    color: aliceblue;
+    background-color: #1C2848;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 10em;
+    margin-bottom: auto;
+    height: auto;
+    padding: 10px;
+}
+
+#panel-title {
+    padding: 0.7em;
+    font-size: 20px;
+
+}
+
+
+#panel-title-legend {
+    font-size: 18px;
+}
+
+
+
+#mapsTag{
+    width: 10px;
+    height: 10px;
+    background-color: green;
+}
+
+.sub-title {
+    margin-right: 1em;
+}
+
+/*** 
+
+CONTENT CARDS FONT PAGE --------------------------------------
+
+
+edit: don't forget to add reactive card titles/authors font- 
+size or  you'll get overflow!
+
+
+*/
+
+
+#card-display {
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    width: 470px;
+    height: auto;
+    padding: 0rem;
+}
+
+#upload-card-info {
+    border: 1px solid rgba(99, 161, 255, 0.493);
+}
+
+#upload-img-card {
+    position: relative;
+    border: 1px solid rgba(99, 161, 255, 0.493);
+    width: 470px;
+    height: auto;
+}
+
+
+#upload-author {
+    margin-top: 2%;
+}
+
+
+#upload-tag-game {
+    border: 1px solid black;
+    color: white;
+    background-color: green;
+    font-size: 18px;
+    z-index: 1;
+    position: absolute;
+}
+#upload-tag-filetype-gamemode {
+    border: 1px solid black;
+    color: white;
+    background-color: rgb(46, 46, 46);
+    font-size: 18px;
+    z-index: 1;
+    margin-top: 37px;
+    position: absolute;
+}
+
+#upload-tag-filetype-map {
+    border: 1px solid black;
+    color: white;
+    background-color: rgb(218, 176, 42);
+    font-size: 18px;
+    z-index: 1;
+    margin-top: 37px;
+    position: absolute;
+}
+
+#upload-tag-filetype-savegame {
+    border: 1px solid black;
+    color: white;
+    background-color: rgb(74, 134, 190);
+    font-size: 18px;
+    z-index: 1;
+    margin-top: 37px;
+    position: absolute;
+}

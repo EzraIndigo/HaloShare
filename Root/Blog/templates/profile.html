@@ -1,0 +1,130 @@
+{% extends "default.html" %}
+
+{% block menu %}
+<div class="menu">
+  <ul class="nav justify-content-center">
+    {% if current_user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link" style="text-decoration: underline;" href="/new_post">new post</a>
+    </li>
+    {% endif %}
+    <li class="nav-item">
+      <a class="nav-link" href="/home">home</a>
+    </li>
+    {% if current_user.is_authenticated %}
+    <li class="nav-item active">
+      <a class="nav-link " href="/profile">profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/groups">groups</a>
+    </li>
+    {% endif %}
+  </ul>
+</div>
+{% endblock menu %}
+
+{% block content %}
+  <div class="w3-padding-64 w3-container w3-cell-row">
+    <div id="display-panel" class=" w3-container  w3-cell-middle w3-round">
+      <div class="w3-bar w3-round">
+        <a id='panel-title' class=" w3-bar-item w3-round"> {{current_user.username}}'s Profile </a>
+        <div id='panel-title-legend' class="w3-bar-item w3-round w3-right">
+          <a id='nav-item' class="w3-btn w3-round">Edit</a>
+        </div>
+      </div>
+      <div class="w3-row-padding w3-container">
+  
+        <!-- Profile Details -->
+        <div id='card-display' class="w3-quarter w3-card">
+          <img id='upload-img-card' src="#" class="w3-round">
+        </div>
+        <div id='card-display' class="w3-rest w3-card">
+          <div id='upload-img-card' class="w3-container w3-bar w3-round w3-large">
+            <h3>Name:</h3>
+            <h3>Email:</h3>
+            <h3>Visit Count: {{current_user.visit_count}}</h3>
+            <h3>Score:</h3>
+            <h3>Uploads:</h3>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="w3-bar w3-round">
+        <a id='panel-title' class=" w3-bar-item w3-round"> {{current_user.username}}'s uploads </a>
+        <div id='panel-title-legend' class="w3-bar-item w3-round w3-right">
+  
+          <label class="sub-title" id="sub-title-option-maps">Maps
+            <input class="w3-check" type="checkbox" checked="checked">
+          </label>
+  
+          <label class="sub-title" id="sub-title-option-gamemodes">Gamemodes
+            <input class="w3-check" type="checkbox" checked="checked">
+          </label>
+  
+          <label class="sub-title" id="sub-title-option-savegame">Savegames
+            <input class="w3-check" type="checkbox" checked="checked">
+          </label>
+  
+          <a id='nav-item' class="w3-btn w3-round"> Show All</a>
+  
+        </div>
+      </div>  
+      <div class="w3-row-padding w3-container">
+  
+        <!-- CARD-->
+        <div id='card-display' class="w3-quarter w3-card">
+          <a id='upload-tag-game' class="w3-tag w3-round  w3-bar-item"> Halo 3</a>
+          <a id='upload-tag-filetype-gamemode' class="w3-tag w3-round  w3-bar-item"> Gamemode</a>
+          <img id='upload-img-card' src="/static/img/user_upload/0000.jpg" class="w3-round">
+          <div id='upload-card-info' class="w3-container w3-bar w3-round w3-large">
+            <a class="w3-bar-item w3-round w3-xlarge">Halo 3 Jenga V1</a>
+            <a class="w3-bar-item w3-round w3-large w3-center w3-right" id='upload-author'>By xxSniperHaloxx</a>
+          </div>
+        </div>
+
+      </div>
+      
+    </div>
+  </div> 
+<!-- 
+  <div class = "post_home">
+    <h3>Posts</h3>
+    <div class="post_home">
+      {% for post in post %}
+      {% if post.private == true and post.user_id == current_user.user_id%}
+        {% set title = ip_list(fdecrypt(post.title, current_user.priv_key))  %}
+        {% set content = ip_list(fdecrypt(post.content, current_user.priv_key))  %}
+        
+          <div style="color: white;">
+            <a href="/post/{{post.post_id}}"><h1>{{title}} <span style="font-size:large;"> posted by {{post.author.username}}</span></h1></a>
+            <p>{{content}}</p>
+            {% if post.images %}
+              {% set images = ip_list(fdecrypt(post.images, current_user.priv_key))  %}
+                {{ filext(images) | safe }}
+            {% endif %}
+            <p style="text-align: right;">{{post.posted_date.strftime('%H:%M, %d-%m-%Y')}}</p>
+          </div>
+          <br>
+      {% elif post.private != true %}
+          <div style="color: white;">
+            <a href="/post/{{post.post_id}}"><h1>{{post.title}} <span style="font-size:large;"> posted by {{post.author.username}}</span></h1></a>
+            <p>{{post.content}}</p>
+            {% if post.images %}
+              {{ filext(post.images) | safe }}
+            {% endif %}
+            <p style="text-align: right;">{{ post.posted_date.strftime('%H:%M, %d-%m-%Y') }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+      <br>
+  </div>
+  <br>
+  
+
+  <br>
+</div> end of profile div-->
+
+{% endblock content %}

@@ -1,0 +1,61 @@
+{% extends "default.html" %}
+
+{% block content %}
+
+<div class="post_home">
+{% if post.private == true and post.user_id == current_user.user_id%}
+
+  {% set title = ip_list(fdecrypt(post.title, current_user.priv_key))  %}
+  {% set content = ip_list(fdecrypt(post.content, current_user.priv_key))  %}
+  <div style="color: white;">
+    <a href="/post/{{post.post_id}}"><h1>{{title}} <span style="font-size:large;"> posted by {{post.author.username}}</span></h1></a>
+    <p>{{content}}</p>
+    {% if post.images %}
+      {% set images = ip_list(fdecrypt(post.images, current_user.priv_key))  %}
+      {{ filext(images) | safe }}
+    {% endif %}
+    <p style="text-align: right;">{{post.posted_date.strftime('%H:%M, %d-%m-%Y')}}</p>
+  </div>
+
+{% elif post.private != true %}
+
+  <div style="color: white;">
+    <a href="/post/{{post.post_id}}"><h1>{{post.title}} <span style="font-size:large;"> posted by {{post.author.username}}</span></h1></a>
+    <p>{{post.content}}</p>
+    {% if post.images %}
+      {{ filext(post.images) | safe }}
+    {% endif %}
+    <p style="text-align: right;">{{ post.posted_date.strftime('%H:%M, %d-%m-%Y') }}</p>
+
+  </div>
+
+</div><!--END OF CONTAINER-->
+<br>
+{% endif %}
+<div>
+  <a class="btn btn-secondary btn-sm mt-1 mb-1"  href="/post/{{post.post_id}}/edit">Edit</a>
+  <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#DeleteModal">Delete</button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="eDeleteodalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this post?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <form  action="{{ url_for('remove_post', post_id=post.post_id) }}" method="POST">
+          <input type="submit" class="btn btn-danger" value="Yes"></input>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock content%}

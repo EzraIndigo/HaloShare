@@ -1,0 +1,41 @@
+{% extends "default.html" %}
+{% block form %}
+<div id="login" style="width: 100%;height: 100%; z-index:3; position: absolute;margin-top:5%">
+    <div id="title" style="color:#ffffff;background-color:#202020; position:relative;text-align:center;z-index:5; margin-top:auto;">
+        <button class="btn btn-danger" style="margin-top:1%;margin-left:95%;z-index:5" onclick="window.location.href='/home'" >X</button>
+        <br>
+        <form method="POST" action=''>
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group"> 
+                <div class="form-group">
+                    {{form.username.label(class="form-control-label")}}
+                    <br>
+                    {{form.username}}
+                </div>
+                <div class="form-group">
+                    {{form.password.label(class="form-control-label")}}
+                    <br>
+                    {{form.password(onclick="document.getElementsById('pnote')removeAttribute('hidden');")}}
+                    <p id="pnote" hidden>Note: Password must include 8 characters. 1 special character and 1 number.</p>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn",style="color:#ef8353;font-size:30px;padding-botton:10px")}}
+            </div>
+            <br>
+            </form>
+            <div class="container" style="z-index:300;">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div id="form_alert" class="alert alert-{{ category }} ">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+    </div>
+  <div id="wrapper" style="top: 0;left: 0;right: 0;	bottom: 0;width: 100%;height: 100%;	background: black;opacity: .5;position: fixed;width: 100%;height: 100%;z-index: 4;">
+  </div>
+{% endblock form %}

@@ -1,0 +1,83 @@
+/* Stats  */
+
+.nav li {
+    color: #ef8353;
+}
+
+.nav li a {
+    color: #ef8353;
+    font-size:18px;
+}
+.nav-link {
+    font-size:18px;color: #ef8353;
+}
+/* NAV MENU  */
+.menu ul {
+    background-color: #4f5d75;
+}
+.menu li a {
+    color: #ef8353;
+    font-size:2rem;
+}
+.menu li.active a {
+    color:white;
+}
+.menu li a:hover {
+    color:white;
+}
+.menu li a:hover {
+    color:white;
+}
+/* Profile  */
+.profile h1 {
+    color:white;
+}
+.profile h3 {
+    color: #ef8353;
+
+}
+/* Profile Groups */
+.profile-groups p{
+    color:white;
+}
+/* Profile Info */
+.profile-info {
+    color:white;
+}
+.profile-info-ip {
+    background-color:#2d3142;
+    color:white;
+}
+.profile-info td{
+    color: #ef8353;
+}
+/* Profile Posts */
+.profile-posts p {
+    color:white;
+}
+
+
+/* Home Posts */
+.post_home a:link{
+    color: white !important;
+}
+.post_home a{
+    color: white !important;
+}
+.post_home a:visited{
+    color: white !important;
+}
+.post_home a:hover{
+    color: #ef8353!important;
+}.post_home h1:hover{
+    color: #ef8353!important;
+}
+.post_home a:visited{
+    color: white;
+}
+.post_page a:hover{
+    color: #ef8353!important;
+}
+.post_page a:visited{
+    color: white;
+}
