@@ -117,7 +117,7 @@ size or  you'll get overflow!
 #card-display {
     margin-top: 0.5em;
     margin-left: 0.5em;
-    width: 470px;
+    width: 350px;
     height: auto;
     padding: 0rem;
 }
@@ -129,7 +129,7 @@ size or  you'll get overflow!
 #upload-img-card {
     position: relative;
     border: 1px solid rgba(99, 161, 255, 0.493);
-    width: 470px;
+    width: 350px;
     height: auto;
 }
 
