@@ -21,6 +21,10 @@ body {
     background-repeat: no-repeat;
 }
 
+.w3-top {
+    z-index: 9999 !important;
+}
+
 .w3-bar,h1,button 
 {
     font-family: "Montserrat", sans-serif
@@ -45,6 +49,7 @@ body {
 }
 
 .w3-bar {
+
     color: var(--nav-text-color);
     background-color: var(--navbar-bg-color);
     padding-bottom: 2px;
