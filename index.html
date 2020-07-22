@@ -7,187 +7,468 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="./Root/Blog/inc/css/index.css">
+<link rel="stylesheet" href="./inc/css/index.css">
 <script src = "./inc/js/main.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <body>
 
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-card w3-left-align w3-large">
+    
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" id = "nav-item" class="w3-bar-item w3-button w3-padding-medium w3-round">Home</a>
-    <a href="#" id = "nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium w3-round">Browse</a>
-    <a href="#" id = "nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium w3-round">Login</a>
-    <input type="text" class="w3-bar-item w3-input w3-hide-small w3-padding-medium w3-right w3-round" placeholder="Quicksearch...">
-    <a href="#" id = "nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium w3-right w3-round"><i class="fa fa-search"></i></a>
+    <a href="#" id = "nav-item2" class="w3-bar-item w3-padding-medium">117Share</a>
+    <a href="browse.html" id = "nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium ">Browse Files</a>
+    <a href="#" id = "nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium ">Login</a>
+    <input id = "nav-item3" type="text" class="w3-bar-item w3-input w3-hide-small w3-padding-medium w3-right " placeholder="Quicksearch...">
+    <a href="#" id = "nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium w3-right"><i class="fa fa-search"></i></a>
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Home</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Browse</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Browse Files</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Login</a>
 
   </div>
 </div>
 
 <!-- Header -->
-<header id = 'headerBanner' class="w3-container w3-center">
-</header>
+
 
 <!-- Front Page Halo Content -->
-<div class="w3-padding-64 w3-container w3-cell-row">
-  <div id = "display-panel" class=" w3-container  w3-cell-middle w3-round">
-    <div class = "w3-bar w3-round">
-    <a id = 'panel-title' class = " w3-bar-item w3-round"> Halo Fileshare - Most Popular </a>
-    <div id = 'panel-title-legend' class = "w3-bar-item w3-round w3-right">
 
-      <label class = "sub-title" id = "sub-title-option-maps">Maps
-        <input class="w3-check" type="checkbox" checked="checked">
-      </label>
-      
+<div>
 
+  <div id = 'center-container'>
+    <div class="w3-padding-16"></div>
+      <a id = "panel-1">// Home</a> 
+      <br> 
+      <br>
+      <br>
+      <a id = "panel2">// Most Popular Items This Week</a>
+      <a id = "panel3">// See More</a>
+      <div class="w3-padding-16"></div>
+      <div id = "cardContainer">
+        <!--- First Row Grid LARGE SCREENS --------------------------->
+        <div class="w3-row-padding w3-hide-medium" >
+          <!--CARD ENTIRE START------------------------------------>
+          <div class="w3-quarter w3-container w3-margin-bottom" id = "single-card-entire">
+            <!--CARD IMG-->
+            <img src="./inc/img/user_upload/0000.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
+             <!--CARD TAGS-->
+              <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo Reach</a>
+              <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+              <!--CARD RATING-->  
+              <div id = "item-ratings">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <p id = "card-info-gamemap">Map - Standoff</p>
+              </div>
+              <!--CARD INFO-->
+              <div id = "card-info">
+                <p id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+                <p id = "card-info-desc">Classic Halo 3 jenga like you know and love! Credit to the original author MrzGriff!</p>
+                <p id = "card-info-uploader">uploaded by: xzSniperzxz </p>
+              </div>
+              </div>
+          </div>
+        <!--CARD ENTIRE END------------------------------------>
 
-      <label class = "sub-title" id = "sub-title-option-gamemodes">Gamemodes
-        <input class="w3-check" type="checkbox" checked="checked">
-      </label>
-      
-
-      <label class = "sub-title" id = "sub-title-option-savegame">Savegames
-        <input class="w3-check" type="checkbox" checked="checked" >
-      </label>
-
-      <a  id = 'nav-item' class = "w3-btn w3-round"> See More</a>
-     
-
-    </div>
-  </div>
-    <div class = "w3-row-padding w3-container">
-      <!-- CARD-->
-      <div id = 'card-display' class = "w3-quarter w3-card">
-        <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
-          <a id = 'upload-tag-filetype-gamemode' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
-            <img id = 'upload-img-card' src = "../HaloShare/inc/img/user_upload/0000.jpg" class = "w3-round">
-              <div id = 'upload-card-info' class = "w3-container w3-bar w3-round w3-large">
-                <a class = "w3-bar-item w3-round w3-xlarge" >Halo 3 Jenga V1</a>
-                  <a class = "w3-bar-item w3-round w3-large w3-center w3-right" id = 'upload-author' >By xxSniperHaloxx</a>
-                </div>
+        <!--CARD ENTIRE START------------------------------------>
+        <div class="w3-quarter w3-container w3-margin-bottom" id = "single-card-entire">
+          <!--CARD IMG-->
+          <img src="./inc/img/user_upload/0100.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
+           <!--CARD TAGS-->
+            <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+            <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item">Map</a>
+            <!--CARD RATING-->  
+            <div id = "item-ratings">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <p id = "card-info-gamemap">Map - Foundry</p>
             </div>
-      <!-- CARD-->
-            <div id = 'card-display' class = "w3-quarter w3-card">
-              <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
-                <a id = 'upload-tag-filetype-map' class = "w3-tag w3-round  w3-bar-item"> Map</a>
-                  <img id = 'upload-img-card' src = "../HaloShare/inc/img/user_upload/0000.jpg" class = "w3-round">
-                    <div id = 'upload-card-info' class = "w3-container w3-bar w3-round w3-large">
-                      <a class = "w3-bar-item w3-round w3-xlarge" >Halo 3 Jenga V1</a>
-                        <a class = "w3-bar-item w3-round w3-large w3-center w3-right" id = 'upload-author' >By xxSniperHaloxx</a>
-                      </div>
-                  </div>
-      <!-- CARD-->
-            <div id = 'card-display' class = "w3-quarter w3-card">
-              <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
-                <a id = 'upload-tag-filetype-savegame' class = "w3-tag w3-round  w3-bar-item"> Savegame</a>
-                  <img id = 'upload-img-card' src = "../HaloShare/inc/img/user_upload/0100.jpg" class = "w3-round">
-                    <div id = 'upload-card-info' class = "w3-container w3-bar w3-round w3-large">
-                      <a class = "w3-bar-item w3-round w3-xlarge" >Halo 3 100% </a>
-                        <a class = "w3-bar-item w3-round w3-large w3-center w3-right" id = 'upload-author' >By xxSniperHaloxx</a>
-                      </div>
-                  </div>
-        <!-- CARD-->
-               <div id = 'card-display' class = "w3-quarter w3-card">
-                <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
-                  <a id = 'upload-tag-filetype-savegame' class = "w3-tag w3-round  w3-bar-item"> Savegame</a>
-                    <img id = 'upload-img-card' src = "../HaloShare/inc/img/user_upload/0200.jpg" class = "w3-round">
-                      <div id = 'upload-card-info' class = "w3-container w3-bar w3-round w3-large">
-                        <a class = "w3-bar-item w3-round w3-xlarge" >Halo 3 65%</a>
-                          <a class = "w3-bar-item w3-round w3-large w3-center w3-right" id = 'upload-author' >By xxSniperHaloxx</a>
-                        </div>
-                    </div>         
-        <!-- CARD-->
-        <div id = 'card-display' class = "w3-quarter w3-card">
-          <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
-            <a id = 'upload-tag-filetype-gamemode' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
-              <img id = 'upload-img-card' src = "../HaloShare/inc/img/user_upload/0000.jpg" class = "w3-round">
-                <div id = 'upload-card-info' class = "w3-container w3-bar w3-round w3-large">
-                  <a class = "w3-bar-item w3-round w3-xlarge" >Halo 3 Jenga V1</a>
-                    <a class = "w3-bar-item w3-round w3-large w3-center w3-right" id = 'upload-author' >By xxSniperHaloxx</a>
-                  </div>
-              </div>     
-
-                <!-- CARD-->
-                <div id = 'card-display' class = "w3-quarter w3-card">
-                  <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
-                    <a id = 'upload-tag-filetype-gamemode' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
-                      <img id = 'upload-img-card' src = "../HaloShare/inc/img/user_upload/0000.jpg" class = "w3-round">
-                        <div id = 'upload-card-info' class = "w3-container w3-bar w3-round w3-large">
-                          <a class = "w3-bar-item w3-round w3-xlarge" >Halo 3 Jenga V1</a>
-                            <a class = "w3-bar-item w3-round w3-large w3-center w3-right" id = 'upload-author' >By xxSniperHaloxx</a>
-                          </div>
-                      </div>     
-
-
-                  <!-- CARD-->
-                  <div id = 'card-display' class = "w3-quarter w3-card">
-                    <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
-                      <a id = 'upload-tag-filetype-gamemode' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
-                        <img id = 'upload-img-card' src = "../HaloShare/inc/img/user_upload/0000.jpg" class = "w3-round">
-                          <div id = 'upload-card-info' class = "w3-container w3-bar w3-round w3-large">
-                            <a class = "w3-bar-item w3-round w3-xlarge" >Halo 3 Jenga V1</a>
-                              <a class = "w3-bar-item w3-round w3-large w3-center w3-right" id = 'upload-author' >By xxSniperHaloxx</a>
-                            </div>
-                        </div>
-                                    <!-- CARD-->
-                                    <div id = 'card-display' class = "w3-quarter w3-card">
-                                      <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
-                                        <a id = 'upload-tag-filetype-gamemode' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
-                                          <img id = 'upload-img-card' src = "../HaloShare/inc/img/user_upload/0000.jpg" class = "w3-round">
-                                            <div id = 'upload-card-info' class = "w3-container w3-bar w3-round w3-large">
-                                              <a class = "w3-bar-item w3-round w3-xlarge" >Halo 3 Jenga V1</a>
-                                                <a class = "w3-bar-item w3-round w3-large w3-center w3-right" id = 'upload-author' >By xxSniperHaloxx</a>
-                                              </div>
-                                          </div>     
-                  <!-- CARD-->
-                  <div id = 'card-display' class = "w3-quarter w3-card">
-                    <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
-                      <a id = 'upload-tag-filetype-gamemode' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
-                        <img id = 'upload-img-card' src = "../HaloShare/inc/img/user_upload/0000.jpg" class = "w3-round">
-                          <div id = 'upload-card-info' class = "w3-container w3-bar w3-round w3-large">
-                            <a class = "w3-bar-item w3-round w3-xlarge" >Halo 3 Jenga V1</a>
-                              <a class = "w3-bar-item w3-round w3-large w3-center w3-right" id = 'upload-author' >By xxSniperHaloxx</a>
-                            </div>
-                        </div>     
-                  <!-- CARD-->
-                  <div id = 'card-display' class = "w3-quarter w3-card">
-                    <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
-                      <a id = 'upload-tag-filetype-gamemode' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
-                        <img id = 'upload-img-card' src = "../HaloShare/inc/img/user_upload/0000.jpg" class = "w3-round">
-                          <div id = 'upload-card-info' class = "w3-container w3-bar w3-round w3-large">
-                            <a class = "w3-bar-item w3-round w3-xlarge" >Halo 3 Jenga V1</a>
-                              <a class = "w3-bar-item w3-round w3-large w3-center w3-right" id = 'upload-author' >By xxSniperHaloxx</a>
-                            </div>
-                        </div>     
-                       
-
+            <!--CARD INFO-->
+            <div id = "card-info">
+              <p id = "card-info-title"> Halo 3 Fat Kid Forest</b></p>
+              <p id = "card-info-desc">W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W  </p>
+              <p id = "card-info-uploader">uploaded by: xzSniperzxz </p></br>
+            </div>
+            </div>
         </div>
+      <!--CARD ENTIRE END------------------------------------>
+
+      <!--CARD ENTIRE START------------------------------------>
+      <div class="w3-quarter w3-container w3-margin-bottom" id = "single-card-entire">
+        <!--CARD IMG-->
+        <img src="./inc/img/user_upload/0200.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
+         <!--CARD TAGS-->
+          <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+          <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+          <!--CARD RATING-->  
+          <div id = "item-ratings">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <p id = "card-info-gamemap">Map - Standoff</p>
+          </div>
+          <!--CARD INFO-->
+          <div id = "card-info">
+            <p id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+            <p id = "card-info-desc">Classic Halo 3 jenga like you know and love! Credit to the original author MrzGriff!</p>
+            <p id = "card-info-uploader">uploaded by: xzSniperzxz </p></br>
+          </div>
+          </div>
+      </div>
+    <!--CARD ENTIRE END------------------------------------>
+                    
+     <!--CARD ENTIRE START------------------------------------>
+          <div class="w3-quarter w3-container w3-margin-bottom" id = "single-card-entire">
+            <!--CARD IMG-->
+            <img src="./inc/img/user_upload/0200.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
+             <!--CARD TAGS-->
+              <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+              <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+              <!--CARD RATING-->  
+              <div id = "item-ratings">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <p id = "card-info-gamemap">Map - Standoff</p>
+              </div>
+              <!--CARD INFO-->
+              <div id = "card-info">
+                <p id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+                <p id = "card-info-desc">Classic Halo 3 jenga like you know and love! Credit to the original author MrzGriff!</p>
+                <p id = "card-info-uploader">uploaded by: xzSniperzxz </p></br>
+              </div>
+              </div>
+          </div>
+        <!--CARD ENTIRE END------------------------------------>
+                    
+        </div> <!--- END First Row Grid LARGE SCREENS--------------------------------------->
+        
+
+       <!--- SECOND Row Grid LARGE SCREENS -------------------------------------------------->
+       <div class="w3-row-padding w3-hide-medium">
+        <!--CARD ENTIRE START------------------------------------>
+        <!--CARD ENTIRE START------------------------------------>
+        <div class="w3-quarter w3-container w3-margin-bottom" id = "single-card-entire">
+          <!--CARD IMG-->
+          <img src="./inc/img/user_upload/0100.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
+           <!--CARD TAGS-->
+            <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+            <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+            <!--CARD RATING-->  
+            <div id = "item-ratings">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <p id = "card-info-gamemap">Map - Standoff</p>
+            </div>
+            <!--CARD INFO-->
+            <div id = "card-info">
+              <p id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+              <p id = "card-info-desc">Classic Halo 3 jenga like you know and love! Credit to the original author MrzGriff!</p>
+              <p id = "card-info-uploader">uploaded by: xzSniperzxz </p></br>
+            </div>
+            </div>
+        </div>
+      <!--CARD ENTIRE END------------------------------------>
+
+       <!--CARD ENTIRE START------------------------------------>
+       <div class="w3-quarter w3-container w3-margin-bottom" id = "single-card-entire">
+        <!--CARD IMG-->
+        <img src="./inc/img/user_upload/0000.jpg " alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
+         <!--CARD TAGS-->
+          <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+          <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+          <!--CARD RATING-->  
+          <div id = "item-ratings">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <p id = "card-info-gamemap">Map - Standoff</p>
+          </div>
+          <!--CARD INFO-->
+          <div id = "card-info">
+            <p id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+            <p id = "card-info-desc">Classic Halo 3 jenga like you know and love! Credit to the original author MrzGriff!</p>
+            <p id = "card-info-uploader">uploaded by: xzSniperzxz </p></br>
+          </div>
+          </div>
+      </div>
+    <!--CARD ENTIRE END------------------------------------>
+
+    <!--CARD ENTIRE START------------------------------------>
+    <div class="w3-quarter w3-container w3-margin-bottom" id = "single-card-entire">
+      <!--CARD IMG-->
+      <img src="./inc/img/user_upload/0100.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
+       <!--CARD TAGS-->
+        <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+        <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+        <!--CARD RATING-->  
+        <div id = "item-ratings">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <p id = "card-info-gamemap">Map - Standoff</p>
+        </div>
+        <!--CARD INFO-->
+        <div id = "card-info">
+          <p id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+          <p id = "card-info-desc">Classic Halo 3 jenga like you know and love! Credit to the original author MrzGriff!</p>
+          <p id = "card-info-uploader">uploaded by: xzSniperzxz </p></br>
+        </div>
+        </div>
+    </div>
+  <!--CARD ENTIRE END------------------------------------>
+   <!--CARD ENTIRE START------------------------------------>
+   <div class="w3-quarter w3-container w3-margin-bottom" id = "single-card-entire">
+    <!--CARD IMG-->
+    <img src="./inc/img/user_upload/0000.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+    <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
+     <!--CARD TAGS-->
+      <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+      <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+      <!--CARD RATING-->  
+      <div id = "item-ratings">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <p id = "card-info-gamemap">Map - Standoff</p>
+      </div>
+      <!--CARD INFO-->
+      <div id = "card-info">
+        <p id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+        <p id = "card-info-desc">Classic Halo 3 jenga like you know and love! Credit to the original author MrzGriff!</p>
+        <p id = "card-info-uploader">uploaded by: xzSniperzxz </p></br>
+      </div>
+      </div>
+  </div>
+<!--CARD ENTIRE END------------------------------------>
+                  
+      </div> <!--- END Second Row Grid LARGE SCREENS--------------------------------------->
+
+
+        <!-----------------------End Of Large Screen Content--------------------------->
+
+
+
+
+
+
+
+
+        <!-----------------------Start Of Medium Screen Content--------------------------->
+        
+        <div class="w3-row-padding w3-hide-large">
+          <!--CARD ENTIRE START------------------------------------>
+          <div class="w3-third w3-container w3-margin-bottom">
+            <!--CARD IMG-->
+            <img src="./inc/img/user_upload/0000.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-theme-d3 " id = "card-bottom-wrap">
+             <!--CARD TAGS-->
+              <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+              <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+              <!--CARD RATING-->  
+              <div id = "item-ratings">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+              <!--CARD INFO-->
+              <div id = "card-info">
+                <p id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+                <p>Created by: xxSniperxx </p></br>
+              </div>
+              </div>
+          </div>
+          <!--CARD ENTIRE END------------------------------------>
+
+                    <!--CARD ENTIRE START------------------------------------>
+                    <div class="w3-third w3-container w3-margin-bottom">
+                      <!--CARD IMG-->
+                      <img src="./inc/img/user_upload/0100.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                      <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
+                       <!--CARD TAGS-->
+                        <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+                        <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+                        <!--CARD RATING-->  
+                        <div id = "item-ratings">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                        </div>
+                        <!--CARD INFO-->
+                        <div id = "card-info">
+                          <p  id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+                          <p>Created by: xxSniperxx </p></br>
+                        </div>
+                        </div>
+                    </div>
+                    <!--CARD ENTIRE END------------------------------------>
+
+                    <!--CARD ENTIRE START------------------------------------>
+                    <div class="w3-third w3-container w3-margin-bottom">
+                      <!--CARD IMG-->
+                      <img src="./inc/img/user_upload/0200.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                      <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
+                       <!--CARD TAGS-->
+                        <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+                        <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+                        <!--CARD RATING-->  
+                        <div id = "item-ratings">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                        </div>
+                        <!--CARD INFO-->
+                        <div id = "card-info">
+                          <p  id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+                          <p>Created by: xxSniperxx </p></br>
+                        </div>
+                        </div>
+                    </div>
+                    <!--CARD ENTIRE END------------------------------------>
+                    
+        </div> <!--- END First Row Grid Medium SCREENS--------------------------------------->
+        
+
+       <!--- SECOND Row Grid Medium SCREENS --------------------------->
+       <div class="w3-row-padding w3-hide-large">
+        <!--CARD ENTIRE START------------------------------------>
+        <div class="w3-third w3-container w3-margin-bottom">
+          <!--CARD IMG-->
+          <img src="./inc/img/user_upload/0100.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
+           <!--CARD TAGS-->
+            <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+            <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+            <!--CARD RATING-->  
+            <div id = "item-ratings">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <!--CARD INFO-->
+            <div id = "card-info">
+              <p  id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+              <p>Created by: xxSniperxx </p></br>
+            </div>
+            </div>
+        </div>
+        <!--CARD ENTIRE END------------------------------------>
+        <!--CARD ENTIRE START------------------------------------>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                    <!--CARD IMG-->
+                    <img src="./inc/img/user_upload/0000.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
+                     <!--CARD TAGS-->
+                      <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+                      <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+                      <!--CARD RATING-->  
+                      <div id = "item-ratings">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                      </div>
+                      <!--CARD INFO-->
+                      <div id = "card-info">
+                        <p  id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+                        <p>Created by: xxSniperxx </p></br>
+                      </div>
+                      </div>
+                  </div>
+                  <!--CARD ENTIRE END------------------------------------>
+
+                  <!--CARD ENTIRE START------------------------------------>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                    <!--CARD IMG-->
+                    <img src="./inc/img/user_upload/0100.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
+                     <!--CARD TAGS-->
+                      <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+                      <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+                      <!--CARD RATING-->  
+                      <div id = "item-ratings">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                      </br>
+                      </div>
+                      <!--CARD INFO-->
+                      <div id = "card-info">
+                      <p  id = "card-info-title" > Halo 3 Classic Jenga</b></p>
+                      <p>Created by: xxSniperxx </p></br>
+                    </div>
+                    </div>
+                  </div>
+                  <!--CARD ENTIRE END------------------------------------>
+
+                  
+      </div>
+      </div><!---End Of Card Container---->
+              
+  
+  
+    </div>
+
+    
+
 
   </div>
+
 </div>
 
 
-
 <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-black">  
-  <div class="w3-large w3-padding-32">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
- </div>
- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
+<div class = "w3-row w3-hide-small" id = "footer">
+  <div class = " w3-container w3-third">
+  </div>
+  <div class = " w3-container w3-third">
+    <p>117Share © 2020</p>
+  </div>
+  <div class = " w3-container w3-third">
+  </div>
+</div>
 
 
 </body>
