@@ -654,6 +654,9 @@ CONTENT CARDS FONT PAGE --------------------------------------
 VIEWING FILE UPLOAD VIEW CSS
 */
 
+
+
+
 #panel-view-file-view { 
     margin-left: 0em;
     font-size: 24px;
@@ -742,7 +745,7 @@ VIEWING FILE UPLOAD VIEW CSS
 
 
 
-@media screen and (max-width: 886px) {
+@media screen and (max-width: 1260px) {
 
 
     #upload-thumb {
@@ -751,12 +754,12 @@ VIEWING FILE UPLOAD VIEW CSS
     }
 
     #upload-img-container {
-        width: 655px !important;
+        min-width: 655px !important;
     }
 
 
     #upload-desc-container {
-        width: 655px !important;
+        min-width: 655px !important;
       }
 
   }
@@ -796,7 +799,7 @@ VIEWING FILE UPLOAD VIEW CSS
   #upload-desc-text {
       margin-top: 0em;
       padding: 1em;
-        color: rgba(255, 255, 255, 0.842);
+    color: rgba(255, 255, 255, 0.842);
       background-color: rgba(0, 0, 0, 0.445);
       border-radius: 3px;
   }
@@ -819,4 +822,38 @@ VIEWING FILE UPLOAD VIEW CSS
   #upload-desc-area a {
       font-size: 16px;
       color: white;
+  }
+
+
+  #download-container {
+      min-width: 350px;
+      margin-top: 0em;
+    margin-left: 2em;
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+    background-color: rgba(0, 0, 0, 0.493);
+    padding: 1em;
+  }
+
+
+  #download-button {
+        margin-left: 1.5em;
+  }
+
+  #download-button a {
+    padding: 1em;
+  }
+
+.dl-btn {
+    color: white;
+    background-color: rgb(39, 39, 39);
+    width: auto;
+    padding-right: 17px;
+    border: 4px solid;
+    border-color: rgb(155, 203, 243);
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+  }
+
+
+  .dl-btn:hover {
+    background-color: rgb(70, 70, 70);
   }
