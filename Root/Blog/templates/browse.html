@@ -1,0 +1,261 @@
+{% extends "default.html" %}
+
+{% block menu %}
+
+<!--  OLD NAV
+<div class="menu">
+        <ul class="nav justify-content-center" > 
+      {% if current_user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" style="text-decoration: underline;" href="/new_post">new post</a>
+          </li>
+      {% endif %}
+          <li class="nav-item ">
+            <a class="nav-link" href="/home">home</a>
+          </li>
+      {% if current_user.is_authenticated %}
+          <li class="nav-item ">
+            <a class="nav-link "  href="/profile">profile</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/groups">groups</a>
+          </li>
+      {% endif %}
+        </ul>
+    </div>
+-->
+
+{% endblock menu %}
+
+{% block content%}
+
+<!-- Front Page Halo Content -->
+<div>
+  <div id = 'center-container'>
+    <div class="w3-padding-16"></div>
+      <a id = "panel-1">// Browse Files</a> 
+      <br> 
+      <br>
+      <br>
+      <a id = "panel2">// Browse Halo Gamemodes and Maps</a>
+      <a id = "panel3">Most Popular</a>
+      <a id = "panel3">Highest Rated</a>
+      <div  id = "browse-container">
+        <div class="w3-container" id = "content-filter">
+          <p id = "content-filter-title"> // Filter Options</p>
+          <div id = "content-filter-game">
+            <p id = "content-filter-game-title">Game</p>
+            <div id = "filter-game-options">
+              <div class = "w3-container" id = "filter-option">
+                <input class = "w3-radio" type = "checkbox">
+                <label>Halo 3</label>
+              </div>
+              <div class = "w3-container" id = "filter-option">
+                <input class = "w3-radio" type = "checkbox">
+                <label id = "filter-option">Halo Reach</label>
+              </div>
+            </div>
+          </div>
+
+          <div id = "content-filter-game">
+            <p id = "content-filter-game-title">Filetype</p>
+            <div id = "filter-game-options">
+              <div class = "w3-container" id = "filter-option">
+                <input class = "w3-radio" type = "checkbox">
+                <label>Map Files</label>
+              </div>
+              <div class = "w3-container" id = "filter-option">
+                <input class = "w3-radio" type = "checkbox">
+                <label id = "filter-option">Gamemode Files</label>
+              </div>
+            </div>
+          </div>
+
+          <div id = "content-filter-game">
+            <p id = "content-filter-game-title">Manual Search</p>
+            <div id = "filter-game-options">
+              <div class = "w3-container" id = "filter-option">
+                <label>Search by Filename</label>
+                <input class = "w3-input w3-small" type = "text">
+
+              </div>
+              <div class = "w3-container" id = "filter-option">
+                <label id = "filter-option">Search by Author</label>
+                <input class = "w3-input w3-small" type = "text">
+
+              </div>
+            </div>
+          </div>
+
+      </div>
+      <div id = "cardContainer">
+        <div class="w3-row-padding ">
+          <!--CARD ENTIRE START------------------------------------>
+          <div class="w3-third w3-container w3-margin-bottom">
+            <!--CARD IMG-->
+            <img src="/static/img/user_upload/0000.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-theme-d3">
+             <!--CARD TAGS-->
+              <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+              <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+              <!--CARD RATING-->  
+              <div id = "item-ratings">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+              <!--CARD INFO-->
+              <div id = "card-info">
+                <p id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+                <p>Created by: xxSniperxx </p></br>
+              </div>
+              </div>
+          </div>
+          <!--CARD ENTIRE END------------------------------------>
+
+                    <!--CARD ENTIRE START------------------------------------>
+                    <div class="w3-third w3-container w3-margin-bottom">
+                      <!--CARD IMG-->
+                      <img src="/static/img/user_upload/0100.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                      <div class="w3-container w3-theme-d3">
+                       <!--CARD TAGS-->
+                        <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+                        <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+                        <!--CARD RATING-->  
+                        <div id = "item-ratings">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                        </div>
+                        <!--CARD INFO-->
+                        <div id = "card-info">
+                          <p  id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+                          <p>Created by: xxSniperxx </p></br>
+                        </div>
+                        </div>
+                    </div>
+                    <!--CARD ENTIRE END------------------------------------>
+
+                    <!--CARD ENTIRE START------------------------------------>
+                    <div class="w3-third w3-container w3-margin-bottom">
+                      <!--CARD IMG-->
+                      <img src="/static/img/user_upload/0200.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                      <div class="w3-container w3-theme-d3">
+                       <!--CARD TAGS-->
+                        <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+                        <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+                        <!--CARD RATING-->  
+                        <div id = "item-ratings">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                        </div>
+                        <!--CARD INFO-->
+                        <div id = "card-info">
+                          <p  id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+                          <p>Created by: xxSniperxx </p></br>
+                        </div>
+                        </div>
+                    </div>
+                    <!--CARD ENTIRE END------------------------------------>
+                    
+        </div> <!--- END First Row Grid Medium SCREENS--------------------------------------->
+        
+
+       <!--- SECOND Row Grid Medium SCREENS --------------------------->
+       <div class="w3-row-padding ">
+        <!--CARD ENTIRE START------------------------------------>
+        <div class="w3-third w3-container w3-margin-bottom">
+          <!--CARD IMG-->
+          <img src="/static/img/user_upload/0100.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-theme-d3">
+           <!--CARD TAGS-->
+            <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+            <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+            <!--CARD RATING-->  
+            <div id = "item-ratings">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <!--CARD INFO-->
+            <div id = "card-info">
+              <p  id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+              <p>Created by: xxSniperxx </p></br>
+            </div>
+            </div>
+        </div>
+        <!--CARD ENTIRE END------------------------------------>
+        <!--CARD ENTIRE START------------------------------------>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                    <!--CARD IMG-->
+                    <img src="/static/img/user_upload/0000.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-theme-d3">
+                     <!--CARD TAGS-->
+                      <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+                      <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+                      <!--CARD RATING-->  
+                      <div id = "item-ratings">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                      </div>
+                      <!--CARD INFO-->
+                      <div id = "card-info">
+                        <p  id = "card-info-title"> Halo 3 Classic Jenga</b></p>
+                        <p>Created by: xxSniperxx </p></br>
+                      </div>
+                      </div>
+                  </div>
+                  <!--CARD ENTIRE END------------------------------------>
+
+                  <!--CARD ENTIRE START------------------------------------>
+                  <div class="w3-third w3-container w3-margin-bottom">
+                    <!--CARD IMG-->
+                    <img src="/static/img/user_upload/0100.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-theme-d3">
+                     <!--CARD TAGS-->
+                      <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo 3</a>
+                      <a id = 'upload-tag-filetype' class = "w3-tag w3-round  w3-bar-item"> Gamemode</a>
+                      <!--CARD RATING-->  
+                      <div id = "item-ratings">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                      </br>
+                      </div>
+                      <!--CARD INFO-->
+                      <div id = "card-info">
+                      <p  id = "card-info-title" > Halo 3 Classic Jenga</b></p>
+                      <p>Created by: xxSniperxx </p></br>
+                    </div>
+                    </div>
+                  </div>
+                  <!--CARD ENTIRE END------------------------------------>
+
+                  
+      </div>
+      </div><!---End Of Card Container---->
+
+      </div>
+
+
+
+
+  </div>
+
+</div>
+
+{% endblock content%}

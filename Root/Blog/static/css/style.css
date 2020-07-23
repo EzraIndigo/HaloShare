@@ -1,0 +1,577 @@
+
+body,h1,h2,h3,h4,h5,h6 
+{
+    font-family: "Lato", sans-serif;
+
+}
+
+body {
+    background-image: url(../img/background.jpg);
+    background-size:auto;
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+.w3-bar,h1,button 
+{
+    font-family: "Montserrat", sans-serif
+}
+
+
+.w3-input {
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.w3-bar-item {
+    margin-left: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.fa-anchor,.fa-coffee 
+{
+    font-size:200px
+}
+
+.w3-bar {
+    color: white;
+    background-color: rgb(31, 31, 31);
+    padding-bottom: 2px;
+}
+
+
+#nav-item {
+    margin-top: 10px;
+    color: rgb(241, 241, 241) !important;
+
+}
+#nav-item-logout {
+    margin-top: 10px;
+    color:black;
+    background-color: rgb(241, 241, 241) !important;
+
+}
+#nav-item-logout:hover{
+    margin-top: 10px;
+    color: rgb(241, 241, 241) !important;
+    background-color: coral !important;
+
+}
+#nav-item3 {
+    animation: minusRightMarginSmooth 0.2s forwards;
+    margin-top: 10px;
+    color: rgb(241, 241, 241) !important;
+
+}
+
+#nav-item:hover {
+    animation: navbarItemHover 1.5s forwards; 
+    color: black !important;
+}
+
+
+#nav-item2 {
+    animation: minusLeftMarginSmooth 0.2s forwards;
+    margin-right: 10px;
+    border-right-style: solid;
+    border-right-color: rgb(226, 226, 226);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 24px;
+    color: rgb(241, 241, 241) !important;
+}
+
+
+#center-container {
+    margin-top: 60px;
+    height: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+
+@media screen and (min-width: 1724px) {
+    #nav-item2 {
+      animation: addLeftMarginSmooth 0.5s forwards;
+    }
+
+    #nav-item3 {
+       
+        animation: addRightMarginSmooth 0.5s forwards;
+    }
+
+    #center-container {
+        animation: CenterResizeAddLargeScreen 0.2s forwards;
+        height: auto;
+    }
+  }
+
+
+  @media screen and (max-width: 720px) {
+
+    #nav-item3 {
+        width: 120px;
+        
+    }
+
+
+  }
+
+
+  @media screen and (max-width: 610px) {
+
+    #panel3 {
+        font-size: 20px !important;
+        top: 80px;
+        left: 120px;
+        position: absolute;
+    }
+
+
+  }
+
+
+
+
+
+
+
+  @keyframes CenterResizeMediumScreen {
+    from {  }
+    to { 
+        margin-left: 5%;
+        margin-right: 5%;
+        
+    }
+}   
+
+@keyframes CenterResizeAddLargeScreen {
+    from {  }
+    to { 
+        margin-left: 15%; 
+        margin-right: 15%; 
+    }
+} 
+
+@keyframes addLeftMarginSmooth {
+    from {  }
+    to { margin-left: 15%; }
+}
+
+
+@keyframes minusLeftMarginSmooth {
+    from {  }
+    to { margin-left: 1%; }
+}
+
+
+@keyframes addRightMarginSmooth {
+    from {  }
+    to { margin-right: 15%; }
+}
+
+
+@keyframes minusRightMarginSmooth {
+    from {  }
+    to { margin-right: 1%; }
+}
+
+
+@keyframes SeeMoreHoverSmooth {
+    from {
+
+    }
+    to { 
+        border-color: rgb(255, 172, 78);
+        color: white;
+
+    }
+}
+
+
+@keyframes navbarItemHover {
+    from {
+
+    }
+    to { 
+        background-color: rgb(226, 226, 226);
+        color: rgb(241, 241, 241) !important;
+
+    }
+}
+
+
+
+
+
+  #panel-1 {
+      margin-left: 0em;
+      font-size: 20px;
+      color: #dadada;
+      padding: 10px;
+      background-color: rgb(31, 31, 31);
+      width: auto;
+      padding-right: 17px;
+      border-bottom: 4px solid;
+      border-color: rgb(155, 203, 243);
+      box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+  }
+
+  #panel2 {
+    margin-left: 0em;
+    font-size: 24px;
+    font-weight: 400;
+    color: #dadada;
+    padding: 10px;
+    background-color: rgb(31, 31, 31);
+    width: auto;
+    padding-right: 17px;
+    border-bottom: 4px solid;
+    border-color: rgb(155, 202, 243);
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+  }
+
+  #panel3 { 
+    margin-left: 1em;
+    font-size: 24px;
+    font-weight: 400;
+    color: #dadada;
+    padding: 10px;
+    background-color: rgb(31, 31, 31);
+    width: auto;
+    padding-right: 17px;
+    border-bottom: 4px solid;
+    border-color: rgb(168, 216, 255);
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+  }
+
+  #panel3:hover {
+    cursor: pointer;
+    animation: SeeMoreHoverSmooth 0.2s forwards;
+  }
+
+
+  #cardContainer {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      background-color: rgba(60, 167, 255, 0.363);
+      box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+      background-color: rgba(0, 0, 0, 0.493);
+  }
+
+  #contentFilter {
+    height: 500px;
+    margin-left: 1em;
+    font-size: 24px;
+    font-weight: 400;
+    color: #dadada;
+    padding: 10px;
+
+    background-color: rgb(59, 59, 59);
+
+    
+    width: 245px;
+    padding-right: 0px;
+  }
+
+  #filter-title{
+    font-size: 24px;
+    font-weight: 400;
+    color: #dadada;
+    padding: 10px;
+    background-color: rgb(29, 29, 29);
+    margin-left: -10px;
+    width: auto;
+  }
+
+  #filter-options-1{
+      list-style: none;
+  }
+
+
+
+
+
+#display-panel {
+    width: auto;
+    color: aliceblue;
+    background-color: #1C2848;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 10em;
+    margin-bottom: auto;
+    height: auto;
+    padding: 10px;
+}
+
+#panel-title {
+    padding: 0.7em;
+    font-size: 20px;
+
+}
+
+
+#panel-title-legend {
+    font-size: 18px;
+}
+
+
+
+#mapsTag{
+    width: 10px;
+    height: 10px;
+    background-color: green;
+}
+
+.sub-title {
+    margin-right: 1em;
+}
+
+#footer {
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    bottom: 0px;
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.829);
+    flex-shrink: 0;
+    box-shadow: 0px -5px 8px rgba(128, 128, 128, 0.37);
+}
+
+
+#browse-container {
+    margin-right: 1em;
+    display: flex;
+    margin-top: 2em;
+}
+
+
+
+#content-filter {
+    max-width: 427px;
+    min-width: 250px;
+    background-color: rgba(0, 0, 0, 0.493);
+    width: 100%;
+    margin-right: 2em;
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+}
+
+#content-filter-title {
+    font-size: 22px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.616);
+    padding: 4px;
+    padding-left: 10px;
+    border-bottom: 4px solid;
+    border-color: rgb(155, 203, 243);
+
+}
+
+#content-filter-game {
+    height: auto;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.616);
+    padding: 0px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    padding-right: 20px;
+
+}
+
+#content-filter-game-title {
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-bottom: 0.5em;
+}
+
+#filter-game-options{
+    font-size: 18px;
+    margin-left: 1em;
+}
+
+
+#filter-option {
+    width: auto;
+    padding: 1px;
+}
+
+
+
+
+/*** 
+
+PROFILE STUFF --------------------------------------
+
+
+*/
+
+
+#profile-container {
+    display: flex;
+    margin-top: 2em;
+}
+
+
+#panel4 { 
+    margin-left: 8em;
+    font-size: 24px;
+    font-weight: 400;
+    color: #dadada;
+    padding: 10px;
+    background-color: rgb(31, 31, 31);
+    width: auto;
+    padding-right: 17px;
+    border-bottom: 4px solid;
+    border-color: rgb(168, 216, 255);
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+  }
+
+
+/*** 
+
+CONTENT CARDS FONT PAGE --------------------------------------
+
+
+*/
+
+
+
+@media screen and (max-width: 1342px) {
+
+    #card-info-gamemap {
+        display: flex;
+    }
+
+    #item-ratings {
+        margin-top: 0.5em;
+        margin-left: -0.3em;
+        margin-bottom: 0em;
+        width: 100%;
+        float: left !important;
+    }
+
+    #card-info {
+        margin-left: -0.3em !important;
+    }
+
+
+  }
+
+
+  
+
+  @media screen and (max-width: 1015px) {
+
+
+    #upload-tag-filetype {
+        margin-top: 3px !important;
+    }
+
+  }
+
+
+  @media screen and (min-width: 1343px) {
+
+
+    #card-bottom-wrap{
+        height: 200px !important;
+        min-height: auto !important;
+        
+    }
+
+  }
+
+
+
+
+#card-info-uploader {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.801);
+    display: inline-block;
+    margin-bottom: 1em;
+}
+
+
+#card-info-desc {
+    font-size: 14px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+#card-info-gamemap {
+    
+    text-align: center;
+    font-size: 12px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.w3-theme-d3 {
+    color:#fff !important; 
+    background-color:#122232 !important;
+    border-top: 3px solid #2c4d6e;
+    border-bottom: 5px solid #7cbbfa
+  }
+
+
+  #item-ratings {
+  
+      margin-right: -0.5em;
+      float: right;
+  }
+
+  .checked {
+      color: orange;
+    }
+
+
+#card-info-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+#card-info-title:hover {
+    color: rgb(114, 143, 161);
+    cursor: pointer;
+}
+
+
+
+#upload-tag-game {
+    margin-left: -0.5em;
+    margin-right: 0.5em;
+    margin-bottom: -2em;
+    border: 1px solid black;
+    color: white;
+    background-color: green;
+    font-size: 14px;
+    z-index: 1;
+
+}
+#upload-tag-filetype {
+    margin-bottom: -2em;
+    margin-top: -7.5em;
+    margin-left: -0.5em;
+    border: 1px solid rgb(0, 0, 0);
+    color: white;
+    background-color: rgb(92, 185, 228);
+    font-size: 14px;
+    z-index: 1;
+
+}
+
+#card-bottom-wrap{
+    height: 230px;
+    min-height: auto;
+    
+}
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Haloshare</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="static/css/style.css">
+<script src="static/js/main.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<body>
+  {% block form %}
+  {% endblock form %}
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-card w3-left-align w3-large">
+
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="/home" id="nav-item2" class="w3-bar-item w3-padding-medium">117Share</a>
+      <a href="/browse" id="nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium ">Browse Files</a>
+
+      {% if current_user.is_authenticated %}
+      <a href="/profile" id="nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium ">{{current_user.username}}'s Profile</a>
+      <a href="/new_post" id="nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium ">New
+        Upload</a>
+      <a href="/logout" id="nav-item-logout" class="w3-bar-item w3-button w3-hide-small w3-padding-medium ">Logout</a>
+
+      {% else  %}
+      <a href="/login" id="nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium ">Login</a>
+      <a href="/sign_up" id="nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium ">Sign Up</a>
+      {% endif %}
+
+      <input id="nav-item3" type="text" class="w3-bar-item w3-input w3-hide-small w3-padding-medium w3-right"
+        placeholder="Quicksearch...">
+      <a href="#" id="nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium w3-right"><i
+          class="fa fa-search"></i></a>
+
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-large">
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">Browse Files</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">Login</a>
+
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div>
+    <!-- Flash Alert Message -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div id="form_alert" class="alert alert-{{ category }} ">
+      {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <!-- Flask Block Content area -->
+    {% block content %}
+
+    {%endblock content %}
+    <!-- Flask Block Content area -->
+  </div>
+  <!-- end old Main Content -->
+
+
+
+  <!-- Footer -->
+  <div class="w3-row w3-hide-small" id="footer">
+    <div class=" w3-container w3-third">
+    </div>
+    <div class=" w3-container w3-third">
+      <p>117Share © 2020</p>
+    </div>
+    <div class=" w3-container w3-third">
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    setTimeout(function () {
+      document.getElementById('form_alert').remove();
+    }, 20000);
+  </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+
+</body>
+
+</html>

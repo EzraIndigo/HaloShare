@@ -1,0 +1,113 @@
+{% extends "default.html" %}
+
+{% block form %}
+<div class="w3-padding-64 w3-container w3-cell-row">
+
+    <div id="display-panel" class="w3-container w3-cell-middle w3-round">
+
+        <!-- New Form -->
+        <form class="w3-container" method="POST" action='' enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+
+            <div class="w3-bar w3-round">
+                <a id='panel-title' class=" w3-bar-item w3-round">New Upload </a>
+                <div id='panel-title-legend' class="w3-bar-item w3-round w3-right">
+                    <!-- Submit -->
+                    {{ form.submit(class="w3-bar-item w3-button w3-hide-small w3-padding-medium w3-round") }}
+                </div>
+            </div>
+            <br>
+
+            <div class="w3-third w3-card">
+                {{form.image.label(class="h4")}}
+
+                <img id='upload-img-card' src="#" class="w3-round">
+                <!-- Image -->
+                <div>
+                    <br>
+                    {% if form.image.errors %}
+                    {{form.image(class="is-invalid")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.image.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div>
+                        {{form.image()}}
+                    </div>
+                    {% endif %}
+                    <br>
+                </div>
+            </div>
+
+            <div class="w3-rest w3-card">
+                <!-- Title -->
+                {{form.title.label(class="h4")}}
+
+                {% if form.title.errors %}
+
+                {{form.title(class="is-invalid")}}
+
+                <div class="invalid-feedback">
+                    {% for error in form.title.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+
+                {% else %}
+                {{form.title(class="w3-input")}}
+                {% endif %}
+                <br>
+                <!-- Description -->
+                {{form.description.label(class="h4")}}
+                {% if form.description.errors %}
+                {{form.description(class="is-invalid")}}
+
+                <div class="invalid-feedback">
+                    {% for error in form.title.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+
+                {% else %}
+                {{form.description(class="w3-input")}}
+                {% endif %}
+                <br>
+                <!-- Private? -->
+                {{ form.private.label(class="h4")   }}
+                {{ form.private(class="w3-check")   }}
+                <br>
+                <!-- File Upload -->
+                <br>
+                {% if form.file.errors %}
+
+                {{form.file(class="is-invalid")}}
+                <div class="invalid-feedback">
+                    {% for error in form.file.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+
+                <div>
+                    {{form.file.label(class="h4")}}
+                    <br>
+                    {{form.file()}}
+                </div>
+                {% endif %}
+                <br>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+</div>
+<!-- 
+      old 
+  -->
+
+
+
+{% endblock form %}
