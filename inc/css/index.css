@@ -671,6 +671,7 @@ VIEWING FILE UPLOAD VIEW CSS
 
 
 #upload-container {
+    min-width: 655px;
     display: flex;
     height: auto;
     margin-top: 2em;
@@ -726,8 +727,63 @@ VIEWING FILE UPLOAD VIEW CSS
 }
 
 #upload-thumb {
-    padding-bottom: 11px;
-    padding-left: 10px;
+    padding: 2px;
+    margin-bottom: 3px;
+    margin-left: 7px;
     width: 150px;
     height: auto;
+    opacity: 80%;
 }
+
+.thumb-active {
+    opacity: 100% !important;
+    border: 2px solid rgb(155, 202, 243);
+}
+
+
+
+@media screen and (max-width: 886px) {
+
+
+    #upload-thumb {
+        margin-left: 2px;
+        margin-top: 5px;
+    }
+
+    #upload-img-container {
+        width: 655px !important;
+    }
+
+
+    #upload-desc-container {
+        width: 655px !important;
+      }
+
+  }
+
+
+  #upload-desc-container {
+    margin-top: 0.5em;
+    min-width: 655px;
+    max-width: 800px;
+    padding: 1em;
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+    background-color: rgba(0, 0, 0, 0.493);
+    margin-left: 0em;
+  }
+
+
+  #desc-comment-bar {
+    background-color: rgb(44, 44, 44);
+    border-bottom: 4px solid;
+    border-color: rgb(155, 202, 243);
+  }
+
+  #desc-comment-button {
+    padding: 1em;
+    margin-bottom: -2px;
+    margin-left: -2px;
+    margin-top: -2px;
+    color: white;
+    background-color: rgb(44, 44, 44);
+  }

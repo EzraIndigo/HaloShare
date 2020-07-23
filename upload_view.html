@@ -57,27 +57,32 @@
             <img id = "upload-thumb" src= "inc/img/user_upload/0200.jpg" class = "">
           </div>
         </div>
-    
       </div>
-      
+
+      <div id = "upload-desc-container">
 
 
+          <div class="w3-bar" id = "desc-comment-bar">
+            <button class="w3-bar-item  tablink w3-light-blue" id = "desc-comment-button" onclick="openCity(event,'upload-desc-area')">Description</button>
+            <button class="w3-bar-item  tablink " id = "desc-comment-button" onclick="openCity(event,'upload-comment-area')">Comments</button>
+          </div>
+  
+          <div id="upload-desc-area" class = "tab" >
+            <h2>Description</h2>
+            <p>Halo 3 Jenga like you know and love! </p>
+          </div>
 
+        <div id="upload-comment-area"  class = "tab" style="display:none">
+          <h2>Comments</h2>
+          <p>Paris is the capital of France.</p> 
+        </div>
+
+      </div>
   </div>
 
 </div>
 
 
-<!-- Footer -->
-<div class = "w3-row w3-hide-small" id = "footer">
-  <div class = " w3-container w3-third">
-  </div>
-  <div class = " w3-container w3-third">
-    <p>117Share © 2020</p>
-  </div>
-  <div class = " w3-container w3-third">
-  </div>
-</div>
 
 
 </body>
