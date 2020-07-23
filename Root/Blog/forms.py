@@ -34,10 +34,10 @@ class Sign_Up_Form(FlaskForm):
             raise ValidationError("Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character")
 
 class Login_Form(FlaskForm):
-    username = StringField('username', validators=[DataRequired(),Length(min=4, max=25)])
-    password = PasswordField('password', validators=[DataRequired(),Length(min=8)])
+    username = StringField('Username', validators=[DataRequired(),Length(min=4, max=25)])
+    password = PasswordField('Password', validators=[DataRequired(),Length(min=8)])
     remember = BooleanField('Stay logged in?')
-    submit = SubmitField('login')
+    submit = SubmitField('Login')
 
 class New_Post_Form(FlaskForm):
     title = StringField('Title', validators=[DataRequired(),Length(min=4, max=25)])

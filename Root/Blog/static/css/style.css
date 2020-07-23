@@ -93,6 +93,11 @@ body {
 
 }
 
+fieldset {
+    text-align: center;
+    border: 0px;
+} 
+
 
 @media screen and (min-width: 1724px) {
     #nav-item2 {

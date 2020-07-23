@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Haloshare</title>
+<title>117Share</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -12,8 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <body>
-  {% block form %}
-  {% endblock form %}
+
   <!-- Navbar -->
   <div class="w3-top">
     <div class="w3-bar w3-card w3-left-align w3-large">
@@ -49,6 +48,7 @@
   </div>
 
   <!-- Main Content -->
+
   <div>
     <!-- Flash Alert Message -->
     {% with messages = get_flashed_messages(with_categories=true) %}
@@ -61,6 +61,8 @@
     {% endif %}
     {% endwith %}
     <!-- Flask Block Content area -->
+    {% block form %}
+    {% endblock form %}
     {% block content %}
 
     {%endblock content %}
