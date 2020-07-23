@@ -787,3 +787,36 @@ VIEWING FILE UPLOAD VIEW CSS
     color: white;
     background-color: rgb(44, 44, 44);
   }
+
+
+  #upload-desc-title {
+      color: white;
+  }
+
+  #upload-desc-text {
+      margin-top: 0em;
+      padding: 1em;
+        color: rgba(255, 255, 255, 0.842);
+      background-color: rgba(0, 0, 0, 0.445);
+      border-radius: 3px;
+  }
+
+
+  #upload-tags-area {
+
+    height: 50px;
+    border-radius: 3px;
+    margin-top: 0.5em;
+    min-width: 655px;
+    max-width: 800px;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+    background-color: rgba(0, 0, 0, 0.493);
+    margin-left: 0em;
+  }
+
+  #upload-desc-area a {
+      font-size: 16px;
+      color: white;
+  }
