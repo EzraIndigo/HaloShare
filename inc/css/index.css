@@ -407,6 +407,90 @@ PROFILE STUFF --------------------------------------
     margin-top: 2em;
 }
 
+#profile-content {
+    max-width: 370px;
+    min-width: 370px;
+    background-color: rgba(0, 0, 0, 0.493);
+    width: 100%;
+    margin-right: 2em;
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+}
+
+
+
+#profile-content-img {
+    display: flex;
+    height: auto;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0px;
+    margin-bottom: 20px;
+
+}
+
+
+#profile-img {
+    float: left;
+    border: 2px solid;
+    border-bottom: 6px solid;
+    border-color: rgb(155, 202, 243);
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+    height: 180px;
+    width: auto;
+}
+
+#profile-img-detail-panel {
+    color: rgb(230, 230, 230);
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 13px;
+    min-width: 152px;
+    border-bottom: 6px solid;
+    border-color: rgb(155, 202, 243);
+    margin-left: 0.7em;
+    margin-right: 0em;
+    background-color: rgba(0, 0, 0, 0.616);
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+    
+
+}
+
+
+#profile-content-about {
+    height: auto;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.616);
+    padding: 0px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    padding-right: 20px;
+
+}
+
+
+#profile-content-title {
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-bottom: 0em;
+}
+
+#profile-content-bio{
+    color: rgb(230, 230, 230);
+    padding-left: 14px;
+}
+#profile-content-pop-uploads {
+    padding: 4px;
+}
+#profile-content-pop-uploads a {
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+#profile-content-search {
+    padding: 5px;
+}
+
 
 #panel4 { 
     margin-left: 8em;

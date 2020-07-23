@@ -18,7 +18,7 @@
     
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="index.html" id = "nav-item2" class="w3-bar-item w3-padding-medium">117Share</a>
-    <a href="#" id = "nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium ">Browse Files</a>
+    <a href="browse.html" id = "nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium ">Browse Files</a>
     <a href="#" id = "nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium ">Login</a>
     <input id = "nav-item3" type="text" class="w3-bar-item w3-input w3-hide-small w3-padding-medium w3-right " placeholder="Quicksearch...">
     <a href="#" id = "nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium w3-right"><i class="fa fa-search"></i></a>
@@ -48,44 +48,44 @@
       <a id = "panel2">// Your Profile and Fileshare</a>
       <div id = "profile-container" class = "">
 
-        <div class="w3-container" id = "content-filter">
+        <div class="w3-container" id = "profile-content">
             <p id = "content-filter-title">xSkyFlexVx</p>
-            <div id = "content-filter-game">
-            <p id = "content-filter-game-title">Bio</p>
-             <div id = "filter-game-options">
-                <p>Avid gamer and Halo Lover!</p>
-          </div>
+            <div id = "profile-content-img">
+              <img id = "profile-img" src="./inc/img/user_profile_img/000000.jpg">
+              <div id = "profile-img-detail-panel">
+                <p>Posted Files: 10</p>
+                <p>Joined: 10/10/20</p>
+                <p>Last Post: 08/10/20</p>
+                <p>File downloads: 1029</p>
+              </div>
+        </div>
+        <div id = "profile-content-about">
+          <p id = "profile-content-title">About Me</p>
+          <p id = "profile-content-bio">
+            Hey! I'm the admin of this site. I'm a longtime Halo Lover and miss the OG fileshare system, so I built this!
+          </p>
         </div>
 
-        <div id = "content-filter-game">
-          <p id = "content-filter-game-title">Filetype</p>
-          <div id = "filter-game-options">
-            <div class = "w3-container" id = "filter-option">
-              <input class = "w3-radio" type = "checkbox">
-              <label>Map Files</label>
-            </div>
-            <div class = "w3-container" id = "filter-option">
-              <input class = "w3-radio" type = "checkbox">
-              <label id = "filter-option">Gamemode Files</label>
-            </div>
-          </div>
+        <div id = "profile-content-about">
+          <p id = "profile-content-title">Popular Uploads</p>
+          <div id = "profile-content-pop-uploads">
+          <a href = "#"> Halo 3 Sandbox Empty</a>
+          <br>
+          <a href = "#"> Halo 3 Foundry Empty</a>
+          <br>
+          <a href = "#"> Halo 3 Sandtrap Empty</a>
         </div>
-
-        <div id = "content-filter-game">
-          <p id = "content-filter-game-title">Manual Search</p>
-          <div id = "filter-game-options">
-            <div class = "w3-container" id = "filter-option">
-              <label>Search by Filename</label>
-              <input class = "w3-input w3-small" type = "text">
-
-            </div>
-            <div class = "w3-container" id = "filter-option">
-              <label id = "filter-option">Search by Author</label>
-              <input class = "w3-input w3-small" type = "text">
-
-            </div>
-          </div>
         </div>
+        <div id = "profile-content-about">
+          <div id = "profile-content-search">
+            <label id = "profile-content-title">Search User's Files</label>
+            <input class = "w3-input w3-small" type = "text">
+
+          </div>
+
+        </div>
+        
+        
     </div>
     
     <div id = "cardContainer">

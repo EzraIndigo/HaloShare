@@ -138,9 +138,9 @@ def sign_up():
 """
 test out making dirs in py
 """
-        flash(f'Account Created. \n Thank you. \nPlease login.', 'success')
-        return redirect('/home')
-    return render_template('sign_up.html', title='sign up', form=form)
+flash(f'Account Created. \n Thank you. \nPlease login.', 'success')
+return redirect('/home')
+return render_template('sign_up.html', title='sign up', form=form)
 
 
 # -------------------------------------------------------------------------------------------------
@@ -205,7 +205,7 @@ def new_post():
 #unfinished end
 
                 # Encrypt
-                if form.private.data == True:
+if form.private.data == True:
                     form.title.data = fencrypt(
                         form.title.data, current_user.priv_key)
                     form.content.data = fencrypt(
