@@ -998,3 +998,62 @@ UPLOAD SIMILAR ITEMS MENU
 #similar-files-card-wrapper {
     margin-top: 1em;
 }
+
+
+
+/* login container */
+
+
+#user-login-container {
+    margin-top: 0.5em;
+    min-width: 350px;
+    max-width: 350px;
+    padding: 1em;
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+    background-color: rgba(0, 0, 0, 0.493);
+    margin-left: 0em;
+    height: auto;
+    max-height: 600px;
+}
+
+
+#username {
+    border-radius: 2px;
+
+}
+
+#password {
+    border-radius: 2px;
+}
+
+#submit {
+    margin-left: 0.9em;
+    background-color: #08121bb2;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+
+
+#form-title-text {
+
+    float:left;
+    width: auto;
+    margin-left: 4px;
+    background-color: #001141c0;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: white;
+    width: 50%;
+    text-align: left;
+    border-radius: 2px;
+}
+
+
+.form-group {
+    height: auto;
+}

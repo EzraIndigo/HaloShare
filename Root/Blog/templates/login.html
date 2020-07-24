@@ -8,23 +8,24 @@
         <div class="w3-padding-16"></div>
 
         <br>
-        <div id = "cardContainer">
-            <div class="w3-row-padding w3-hide-medium" >
+        <div id = "user-login-container">
+            <a id = "panel5">Enter Username and Password</a> <br>
+            <div class="w3-row-padding" >
             <form method="POST" action='' class="w3-display-container">
                 {{ form.hidden_tag() }}
 
                 <fieldset class="form-group"> 
-                        {{form.username.label(class="w3-left")}}
+                        {{form.username.label(class="w3-left", id = "form-title-text")}}
                         <br>
-                        {{form.username(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:30%;  ")}}
+                        {{form.username(class="w3-bar-item w3-input  w3-padding-medium", style="width:50%;  ")}}
                         <br>
-                        {{form.password.label(class="w3-left")}}
+                        {{form.password.label(class="w3-left", id = "form-title-text")}}
                         <br>
-                        {{form.password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium w3-left",style="width:30%", onclick="document.getElementsById('pnote')removeAttribute('hidden');")}}
+                        {{form.password(class="w3-bar-item w3-input  w3-padding-medium w3-left",style="width:50%", onclick="document.getElementsById('pnote')removeAttribute('hidden');")}}
                         <p id="pnote" hidden>Note: Password must include 8 characters. 1 special character and 1 number.</p>
                 </fieldset>
                 <div class="form-group">
-                    {{ form.submit(class="w3-bar-item w3-button w3-padding-large")}}
+                    {{ form.submit(class="w3-bar-item w3-button ")}}
                 </div>
                 </form>
             </div>
