@@ -13,6 +13,27 @@ body {
     flex-direction: column;
 }
 
+
+body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
 .w3-bar,h1,button 
 {
     font-family: "Montserrat", sans-serif
@@ -337,15 +358,12 @@ fieldset {
 }
 
 #footer {
-
-    margin-top: 3em;
     font-family: "Lato", sans-serif;
     font-size: 18px;
     color: white;
     text-align: center;
-    
-    position: relative;
-    z-index: -2;
+    bottom: 0px;
+    position: fixed;
     height: 100px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.829);
@@ -692,7 +710,8 @@ VIEWING FILE UPLOAD VIEW CSS
     border-color: rgb(155, 203, 243);	
 }	
 #upload-img-container {	
-    max-width: 800px;	
+    min-width: 825px;
+    max-width: 825px;	
     padding: 1em;	
     box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);	
     background-color: rgba(0, 0, 0, 0.493);	
@@ -705,7 +724,7 @@ VIEWING FILE UPLOAD VIEW CSS
     border-bottom: 6px solid;	
     border-color: rgb(155, 202, 243);	
     box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);	
-    max-height: 350px;	
+    max-height: 450px;	
     min-height: 250px ;	
     width: auto;	
 }	
@@ -716,8 +735,9 @@ VIEWING FILE UPLOAD VIEW CSS
 #upload-thumb {	
     padding: 2px;	
     margin-bottom: 3px;	
-    margin-left: 7px;	
-    width: 150px;	
+    margin-left: 2px;	
+    margin-top: 5px;		
+    width: 192px;	
     height: auto;	
     opacity: 80%;	
 }	
@@ -725,26 +745,26 @@ VIEWING FILE UPLOAD VIEW CSS
     opacity: 100% !important;	
     border: 2px solid rgb(155, 202, 243);	
 }	
-@media screen and (max-width: 1260px) {	
+@media screen and (max-width: 1352px) {	
     #upload-thumb {	
         margin-left: 2px;	
         margin-top: 5px;	
     }	
     #upload-img-container {	
-        min-width: 655px !important;	
+        min-width: 825px !important;
     }	
-    #upload-desc-container {	
-        min-width: 655px !important;	
-      }	
+
   }	
   #upload-desc-container {	
     margin-top: 0.5em;	
-    min-width: 655px;	
-    max-width: 800px;	
+    min-width: 825px;	
+    max-width: 825px;	
     padding: 1em;	
     box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);	
     background-color: rgba(0, 0, 0, 0.493);	
     margin-left: 0em;	
+    height: auto;
+    max-height: 600px;
   }	
   #desc-comment-bar {	
     background-color: rgb(44, 44, 44);	
@@ -786,23 +806,26 @@ VIEWING FILE UPLOAD VIEW CSS
       color: white;	
   }	
   #download-container {	
+      float: right;
       min-width: 350px;	
       margin-top: 0em;	
-    margin-left: 2em;	
+    margin-left: 5em;	
     box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);	
     background-color: rgba(0, 0, 0, 0.493);	
     padding: 1em;	
   }	
   #download-button {	
-        margin-left: 1.5em;	
+        margin-left: 0em;
+        margin-bottom: 1em;	
   }	
   #download-button a {	
     padding: 1em;	
   }	
 .dl-btn {	
+    margin-bottom: 0em;	
     color: white;	
     background-color: rgb(39, 39, 39);	
-    width: auto;	
+    width: 100%;	
     padding-right: 17px;	
     border: 4px solid;	
     border-color: rgb(155, 203, 243);	
@@ -812,8 +835,166 @@ VIEWING FILE UPLOAD VIEW CSS
     background-color: rgb(70, 70, 70);	
   }
 
+
+    #user-uploader-bar {
+        display: flex;
+        margin-bottom: 1em;
+        background-color: #0a1124b4;
+        border-radius: 2px;
+    }
+
+    #user_img_card {
+        height: 90px;
+        padding: 2px;
+        background: rgb(155, 203, 243);
+    }
+
+
+
+    #card-prof-all {
+        margin-left: 1em;
+    }
+
+    #user_id_card {
+        margin-left: -0.2em;
+        height: 40px;
+        width: 100%;
+        margin-top: 0em;
+        padding: 4px;
+        font-size: 22px;
+        color: white;
+    }
+
+    #user_info_card {
+        margin-top: 0em;
+        height: auto;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.719);
+        display: flex;
+    }
+
+    #user_img_card:after {
+        display: block;
+    }
+
+    #panel5 {
+        display: flex;
+        margin-left: 0em;
+        font-size: 20px;
+        color: #dadada;
+        padding: 10px;
+        background-color: rgb(31, 31, 31);
+        width: auto;
+        padding-right: 17px;
+        border-bottom: 4px solid;
+        border-color: rgb(155, 203, 243);
+        box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+        margin-bottom: 0em;
+    }
+
+    #upload-file-info-container {
+        margin-bottom: 1em;
+        padding: 15px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.767);
+        border-radius: 2px;
+    }
+
+    #file_info_card{
+        margin-top: 0em;
+        height: auto;
+        font-size: 14px;
+        color: rgba(0, 17, 48, 0.719);
+        display: flex;
+    }
+
+
+    .share-button{
+        border-radius: 2px;
+        font-size: 20px !important;
+        padding: 5px;
+        margin-bottom: 0.5em;	
+        border: 1px solid rgba(0, 0, 0, 0.603);
+        background-color: rgba(255, 255, 255, 0.897);	
+        width: 100%;	
+	
+    }
+
+    #upload-file-recommendation {
+        display: flex;
+        margin-bottom: 9em;
+        padding: 15px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.767);
+        border-radius: 2px;
+    }
+
+
+    #upload-file-recommend-title {
+        font-size: 19px;
+        padding: 4px;
+    }
+
+    #upload-file-recommend-file {
+        cursor: pointer;
+        margin: 5px;
+        margin-top: 5px;
+        font-size: 17px;
+        padding: 10px;
+        padding-left: 6px;
+        color: rgba(8, 59, 121, 0.712);
+        text-decoration: underline;
+    }
+
+    #upload-entire-container {
+        display: flex;
+    }
+
 /**
 
-
+UPLOAD SIMILAR ITEMS MENU
 
 */
+
+
+
+
+#upload-similar-items-menu{
+    padding: 1em;
+    height: auto;
+    margin-top: 6px;
+    margin-left: 5em;
+    max-height: 880px;
+    width: 387px;
+    max-width: 387px;
+    min-width: 350px;
+    background-color: rgba(0, 0, 0, 0.493);
+    overflow-y: auto;
+}
+
+/* custom scrollbar */
+#upload-similar-items-menu::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+/* custom scrollbar */
+#upload-similar-items-menu::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+/* custom scrollbar */
+#upload-similar-items-menu::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+
+
+#similar-files-card-wrapper {
+    margin-top: 1em;
+}
