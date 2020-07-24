@@ -30,6 +30,7 @@ class User(db.Model, UserMixin):
     def get_id(self):
         return(self.user_id)
 
+#USER UPLOADS/POSTS
 class Post(db.Model):
     post_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'), nullable=False)
@@ -52,7 +53,7 @@ class Post(db.Model):
     def __repr__(self):
         return f"Post('{self.post_id}','{self.title}','{self.posted_date}')"
 
-
+#RATINGS TABLE FOR EACH POST
 class Ratings(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey('post.post_id'), primary_key =True, nullable=False)
     rating = db.Column(db.Integer, nullable=False)
@@ -61,3 +62,12 @@ class Ratings(db.Model):
 
     def __repr__(self):
         return f"Post('{self.post_id}','{self.rating}','{self.rating_count}')"
+
+
+#POPULARITY TABLE INSERT new row TRIGGERED EACH DOWNLOAD WITH TIMESTAMP TO LATER COUNT and ORDER BY date to deduce X Downloads on X Date
+class Popularity(db.Model):
+    pop_id = db.Column(db.Integer, primary_key=True)
+    date_time = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+    def __repr__(self):
+        return f"Post('{self.pop_id}','{self.date_time}')"
