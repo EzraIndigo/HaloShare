@@ -1,85 +1,132 @@
 {% extends "default.html" %}
 
 {% block form %}
+<div>
+    <div id='center-container'>
+        <div class="w3-padding-16"></div>
+        <a id="panel2">// Create an account</a>
+        <div class="w3-padding-16"></div>
 
-<div id="login" style="width: 100%;height: 100%; z-index:3; position: absolute;margin-top:10%">
-    <div id="title" style="color:#ffffff;background-color:#202020; position:relative;text-align:center;z-index:5; margin-top:auto;">
-        <button class="btn btn-danger" style="margin-top:1%;margin-left:95%;z-index:5" onclick="window.location.href='/home'" >X</button>
         <br>
-        <form method="POST" action=''>
-            {{ form.hidden_tag() }}
-            <fieldset class="form-group"> 
-                <div class="form-group">
-                    {{form.username.label(class="form-control-label")}}
-                    <br>
-                    {% if form.username.errors %}
-                        {{form.username(class="is-invalid")}}
-                            <div class="invalid-feedback">
-                                {% for error in form.username.errors %}
-                                    <span>{{ error }}</span>
-                                {% endfor %}
-                            </div>
-                    {% else %}
-                        {{form.username}}
-                    {% endif %}
-                    <br>
-                </div>
-                <div class="form-group">
-                    {{form.email.label(class="form-control-label")}}
-                    <br>
-                    {% if form.email.errors %}
-                        {{form.email(class="is-invalid")}}
+        <div id="cardContainer">
+
+            <div class="w3-container">
+
+
+                <form method="POST" action='' class="w3-cell-row">
+                    {{ form.hidden_tag() }}
+
+                    
+                    <!-- Text -->
+                    <div class="w3-container w3-cell">
+
+                        <!-- Username -->
+                        {{form.username.label(class="w3-left")}}
+                        <br>
+                        {% if form.username.errors %}
+                            {{form.username(class="is-invalid")}}
+                                <div class="invalid-feedback">
+                                    {% for error in form.username.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                        {% else %}
+                            {{form.username(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:100%;")}}
+                        {% endif %}
+
+                        <!-- Email -->
+                        {{form.email.label(class="w3-left")}}
+                        <br>
+                        {% if form.email.errors %}
+                            {{form.email(class="is-invalid")}}
                             <div class="invalid-feedback">
                                 {% for error in form.email.errors %}
                                     <span>{{ error }}</span>
                                 {% endfor %}
-                            </div>
-                    {% else %}
-                        {{form.email}}
-                    {% endif %}
-                    <br>
-                </div>
-                <div class="form-group">
-                    {{form.password.label(class="form-control-label")}}
-                    <br>
-                    {% if form.password.errors %}
+                        </div>
+                        {% else %}
+                            {{form.email(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:100%;")}}
+                        {% endif %}
+
+                        <!-- Password_one -->
+                        {{form.password.label(class="w3-left")}}
+                        <br>
+                        {% if form.password.errors %}
                         {{form.password(class="is-invalid")}}
                             <div class="invalid-feedback">
                                 {% for error in form.password.errors %}
                                     <span>{{ error }}</span>
                                 {% endfor %}
                             </div>
-                    {% else %}
-                        {{form.password}}
-                    {% endif %}
-                    <br>
-                </div>
-                <div class="form-group"> 
-                    {{form.check_password.label(class="form-control-label")}}
-                    <br>
-                    {% if form.check_password.errors %}
-                        {{form.check_password(class="is-invalid")}}
+                        {% else %}
+                            {{form.password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:100%;")}}
+                        {% endif %}
+
+                        <!-- Password_two -->
+                        {{form.check_password.label(class="w3-left")}}
+                        <br>
+                        {% if form.check_password.errors %}
+                            {{form.check_password(class="is-invalid")}}
+                                <div class="invalid-feedback">
+                                    {% for error in form.check_password.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                        {% else %}
+                            {{form.check_password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:100%;")}}
+                        {% endif %}
+
+                        <br>
+                        <p id="pnote" hidden>Note: Password must include 8 characters. 1 special character and 1 number.</p>
+                        
+                        <div class="form-group">
+                            {{ form.submit(class="w3-bar-item w3-button w3-padding-large")}}
+                        </div>
+                        
+                    </div>
+
+                    <!-- Image -->
+                    <div class="w3-container w3-cell w3-middle">
+                        <h3>Profile Photo</h3>
+                        <div id="profile-content-img">
+                            <img id="profile-img" src="static/img/placeholder.jpeg">
+                        </div>
+                        {% if form.file.errors %}
+                        {{form.file(class="is-invalid")}}
                             <div class="invalid-feedback">
-                                {% for error in form.check_password.errors %}
+                                {% for error in form.file.errors %}
                                     <span>{{ error }}</span>
                                 {% endfor %}
                             </div>
-                    {% else %}
-                        {{form.check_password}}
-                    {% endif %}
-                    <br>
-                </div>
-            </fieldset>
-            <div class="form-group">
-                {{ form.submit(class="btn",style="color:#ef8353;font-size:30px;padding-botton:10px")}}
-                
+                        {% else %}
+                        <div>
+                        {{form.file.label(class="h4")}}
+                        <br>
+                        {{form.file()}}
+                        </div>
+                        {% endif %}
+                    </div>
+
+
+                </form>
+
             </div>
-            <br>
-            </form>
+
+            <div class="container" style="z-index:300;">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <div id="form_alert" class="alert alert-{{ category }} ">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+
+        </div>
     </div>
 
-  <div id="wrapper" style="top: 0;left: 0;right: 0;	bottom: 0;width: 100%;height: 100%;	background: black;opacity: .5;position: fixed;width: 100%;height: 100%;z-index: 4;">
-      
-  </div>
+</div>
 
 {% endblock form %}
