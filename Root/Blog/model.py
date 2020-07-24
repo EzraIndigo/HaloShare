@@ -49,6 +49,7 @@ class Post(db.Model):
     private = db.Column(db.Boolean, nullable=False, default=True)
     child_file = db.Column(db.Integer, nullable=True)
     download_count = db.Column(db.String(25), nullable=False)
+    search_tags = db.Column(db.String, nullable=False)
 
     def __repr__(self):
         return f"Post('{self.post_id}','{self.title}','{self.posted_date}')"
