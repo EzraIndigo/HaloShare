@@ -53,5 +53,11 @@ class Post(db.Model):
         return f"Post('{self.post_id}','{self.title}','{self.posted_date}')"
 
 
+class Ratings(db.Model):
+    post_id = db.Column(db.Integer, db.ForeignKey('post.post_id'), primary_key =True, nullable=False)
+    rating = db.Column(db.Integer, nullable=False)
+    download_count = db.Column(db.Integer, nullable=False)
+    rating_count = db.Column(db.Integer, nullable = False)
 
-
+    def __repr__(self):
+        return f"Post('{self.post_id}','{self.rating}','{self.rating_count}')"
