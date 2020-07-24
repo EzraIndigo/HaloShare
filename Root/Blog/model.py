@@ -32,15 +32,26 @@ class User(db.Model, UserMixin):
 
 class Post(db.Model):
     post_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
-    posted_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    images = db.Column(db.String(25), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'), nullable=False)
-    private = db.Column(db.Boolean, nullable=False, default=True)
-
+    post_filename = db.Column(db.String(25), nullable=False)
     title = db.Column(db.String(15), nullable=False)
-    description = db.Column(db.Text, nullable=False)
-    game = db.Column(db.String(15), nullable=False)
-    mode = db.Column(db.String(15), nullable=False)
-    
+    desc_short = db.Column(db.String(75), nullable=False)
+    desc_long = db.Column(db.Text, nullable=False)
+    user_username = db.Column(db.String(25), db.ForeignKey('user.username'), nullable=False)
+    game_name = db.Column(db.String(15), nullable=False)
+    game_filetype = db.Column(db.String(15), nullable=False)
+    game_map = db.Column(db.String(15), nullable=False)
+    rating = db.Column(db.Integer, nullable=False)
+    image_primary = db.Column(db.String(25), nullable=False)
+    image_others = db.Column(db.String(25), nullable=True)
+    posted_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    private = db.Column(db.Boolean, nullable=False, default=True)
+    child_file = db.Column(db.Integer, nullable=True)
+    download_count = db.Column(db.String(25), nullable=False)
+
     def __repr__(self):
         return f"Post('{self.post_id}','{self.title}','{self.posted_date}')"
+
+
+
+
