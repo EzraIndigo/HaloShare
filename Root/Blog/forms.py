@@ -17,8 +17,7 @@ class Sign_Up_Form(FlaskForm):
     check_password = PasswordField('confirm password', validators=[DataRequired(),EqualTo('password')])
     submit = SubmitField('sign up')
 
-    image = FileField('Thumbnail upload')
-    file = FileField('File upload')
+    file = FileField('Thumbnail upload')
     
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()

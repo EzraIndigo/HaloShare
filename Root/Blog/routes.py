@@ -1,5 +1,6 @@
 import os
 from os.path import join, dirname, realpath
+from os import path
 from datetime import datetime
 from flask import Flask, render_template, flash, redirect, send_from_directory, request, url_for
 from flask_login import login_user, current_user, logout_user
@@ -36,8 +37,47 @@ def fkey(input):  # creates keys for users
 
     key = base64.urlsafe_b64encode(kdf.derive(key))  # building it
     return key
-
+# -------------------------------------------------------------------------------------------------
 # --------------------------------------------------------------- CHANGE BEFORE SUBMITTING/ TEMP BECAUSE OF REBOOTS/ SHOULD BE THE FUNCTION
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+
+# USER DIRECTORY
+
+def new_user_dir(input):
+
+    user_root = "/user/"
+    print(input)
+    user_path = user_root+input
+    print(user_path)
+    try:
+        os.mkdir(basedir+user_path)
+        print("done")
+        return True
+    except OSError:
+        print("not done")
+        return False
+    
+
+# FILE VALIDATION PREREQUISITES------------------------------------------------------------------
+IMAGE_ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+FILE_ALLOWED_EXTENSIONS = {'zip'}
+
+def image_allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in IMAGE_ALLOWED_EXTENSIONS
+
+def file_allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in FILE_ALLOWED_EXTENSIONS
+# allowing the app to save to the correct relative path
+IMAGE_UPLOAD_FOLDER = '/user/uploads/images'
+USER_IMAGE_UPLOAD_FOLDER = '/user/'
+
+app.config['IMAGE_UPLOAD_FOLDER'] = IMAGE_UPLOAD_FOLDER
+app.config['USER_IMAGE_UPLOAD_FOLDER'] = USER_IMAGE_UPLOAD_FOLDER
+
+# -------------------------------------------------------------------------------------------------
 storekey = b'LUBQ0ohhwDoA8U0Z'
 app.jinja_env.globals['storekey'] = storekey
 
@@ -122,45 +162,46 @@ def login():
 def sign_up():
     if current_user.is_authenticated:
         return redirect("/home")
-    form = Sign_Up_Form()
+    form = Sign_Up_Form(CombinedMultiDict((request.files, request.form)))
+
+    
     if form.validate_on_submit():
-        hashed_password = bcrypt.generate_password_hash(
-            form.password.data).decode('utf-8')
-        hashed_email = bcrypt.generate_password_hash(
-            form.email.data).decode('utf-8')
+        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        hashed_email = bcrypt.generate_password_hash(form.email.data).decode('utf-8')
+
+        #---- User Directory ----
+        if not new_user_dir(form.username.data):
+            flash(f'User Creation Issue. Please contact support. \n', 'warning')
+        #---- User Image ----
+
+        """
+        image = request.files['file']
+
+        if image:
+                if image_allowed_file(image.filename):
+                    name = secure_filename(image.filename)
+                    # creating GUID naming convention
+                    timestamp = datetime.now().strftime("%m%d%Y%H%M%S")
+                    filename = timestamp+name  # concatonate GUID + OG name
+                if image_allowed_file(image.filename):
+                    # saving to dir
+                    path = os.path.join(basedir, app.config['USER_IMAGE_UPLOAD_FOLDER'],form.username.data, filename)
+                    image.save(path)
+                else:
+                    flash(f'Image upload error. Try a different image. \n', 'warning')
+        """
+
         # --------------------------------------------------------------------------------------------ENCRYPTION--client key
         ckey = fkey(form.password.data)
-        user = User(username=form.username.data, email=hashed_email,
-                    password=hashed_password, priv_key=ckey)
+        user = User(username=form.username.data, email=hashed_email,password=hashed_password, priv_key=ckey)
         db.session.add(user)
         db.session.commit()
-#CREATE DIRECTORY 
-
         flash(f'Account Created. \n Thank you. \nPlease login.', 'success')
-        return redirect('/home')
+        return redirect('/login')
     return render_template('sign_up.html', title='sign up', form=form)
 
 
-# -------------------------------------------------------------------------------------------------
-# FILE VALIDATION PREREQUISITES------------------------------------------------------------------
-IMAGE_ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-FILE_ALLOWED_EXTENSIONS = {'zip'}
 
-def image_allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in IMAGE_ALLOWED_EXTENSIONS
-
-def file_allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in FILE_ALLOWED_EXTENSIONS
-# allowing the app to save to the correct relative path
-IMAGE_UPLOAD_FOLDER = './user/uploads/images'
-
-basedir = os.path.abspath(os.path.dirname(__file__))
-app.config['IMAGE_UPLOAD_FOLDER'] = IMAGE_UPLOAD_FOLDER
-
-
-# -------------------------------------------------------------------------------------------------
 # POST ROUTE
 @app.route("/new_post", methods=['GET', 'POST'])
 def new_post():
@@ -180,27 +221,9 @@ def new_post():
                     filename = timestamp+name  # concatonate GUID + OG name
                 if image_allowed_file(image.filename):
                     # saving to dir
-                    image.save(os.path.join(
-                        basedir, app.config['IMAGE_UPLOAD_FOLDER'], filename))
+                    image.save(os.path.join(basedir, app.config['IMAGE_UPLOAD_FOLDER'], filename))
                 else:
                     flash(f'Image upload error. Try a different image. \n', 'warning')
-#unfinished start
-#
-#            file = request.files['file']
-#            if file:
-#                if image_allowed_file(file.filename):
-#                    name = secure_filename(file.filename)
-#                    # creating GUID naming convention
-#                    timestamp = datetime.now().strftime("%m%d%Y%H%M%S")
-#                    filename = timestamp+name  # concatonate GUID + OG name
-#                if image_allowed_file(file.filename):
-#                    # saving to dir
-#                    file.save(os.path.join(
-#                        basedir, app.config['IMAGE_UPLOAD_FOLDER'], filename))
-#                else:
-#                   flash(f'File upload error. Try a different file. \n', 'warning')
-#
-#unfinished end
 
                 # Encrypt
                 if form.private.data == True:
@@ -330,7 +353,7 @@ def logout():
 
 @app.route('/favicon.ico')
 def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'inc/fav'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+    return send_from_directory(os.path.join(app.root_path, 'static/fav'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 # Notes
 #

@@ -3,6 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 
+from datetime import datetime
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'cd7eacce7ca5ed08d329ad5f52c7c742'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
@@ -36,7 +38,16 @@ def ip_list(input):
     input = str(input)
     ipEnd = len(input)-1
     return(input[2:ipEnd])
+
 app.jinja_env.globals.update(ip_list=ip_list)
+
+def time_con(input):
+
+    output = input.strftime("%d/%m/%Y")
+
+    return(output)
+
+app.jinja_env.globals.update(time_con=time_con)
 
 ##
 ##

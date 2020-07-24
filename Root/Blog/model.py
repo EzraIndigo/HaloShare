@@ -18,7 +18,11 @@ class User(db.Model, UserMixin):
     last_login = db.Column(db.DateTime(),default=datetime.utcnow, onupdate=datetime.utcnow)
     #other
     visit_count = db.Column(db.Integer,default=0)
-    devices_log = db.Column(db.String())
+    about = db.Column(db.VARCHAR(),default="Hello, this is a test bio. I like Halo.")
+    posted_count = db.Column(db.Integer,default=0)
+    total_downloads = db.Column(db.Integer,default=0)
+    #photo
+    user_photo = db.Column(db.String(255))
     priv_key = db.Column(db.Text())
 
     posted = db.relationship('Post', backref='author', lazy=True)
