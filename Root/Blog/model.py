@@ -38,7 +38,6 @@ class Post(db.Model):
     title = db.Column(db.String(15), nullable=False)
     desc_short = db.Column(db.String(75), nullable=False)
     desc_long = db.Column(db.Text, nullable=False)
-    user_username = db.Column(db.String(25), db.ForeignKey('user.username'), nullable=False)
     game_name = db.Column(db.String(15), nullable=False)
     game_filetype = db.Column(db.String(15), nullable=False)
     game_map = db.Column(db.String(15), nullable=False)
