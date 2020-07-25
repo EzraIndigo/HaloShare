@@ -21,7 +21,7 @@
                     <div class="w3-container w3-cell">
 
                         <!-- Username -->
-                        {{form.username.label(class="w3-left")}}
+                        {{form.username.label(class="w3-left" , id = "form-title-text")}}
                         <br>
                         {% if form.username.errors %}
                             {{form.username(class="is-invalid")}}
@@ -31,11 +31,11 @@
                                     {% endfor %}
                                 </div>
                         {% else %}
-                            {{form.username(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:100%;")}}
+                            {{form.username(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:75%;")}}
                         {% endif %}
 
                         <!-- Email -->
-                        {{form.email.label(class="w3-left")}}
+                        {{form.email.label(class="w3-left", id = "form-title-text")}}
                         <br>
                         {% if form.email.errors %}
                             {{form.email(class="is-invalid")}}
@@ -45,11 +45,11 @@
                                 {% endfor %}
                         </div>
                         {% else %}
-                            {{form.email(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:100%;")}}
+                            {{form.email(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:75%;")}}
                         {% endif %}
 
                         <!-- Password_one -->
-                        {{form.password.label(class="w3-left")}}
+                        {{form.password.label(class="w3-left", id = "form-title-text-password")}}
                         <br>
                         {% if form.password.errors %}
                         {{form.password(class="is-invalid")}}
@@ -59,11 +59,11 @@
                                 {% endfor %}
                             </div>
                         {% else %}
-                            {{form.password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:100%;")}}
+                            {{form.password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:75%;")}}
                         {% endif %}
 
                         <!-- Password_two -->
-                        {{form.check_password.label(class="w3-left")}}
+                        {{form.check_password.label(class="w3-left", id = "form-title-text-password")}}
                         <br>
                         {% if form.check_password.errors %}
                             {{form.check_password(class="is-invalid")}}
@@ -73,7 +73,7 @@
                                     {% endfor %}
                                 </div>
                         {% else %}
-                            {{form.check_password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:100%;")}}
+                            {{form.check_password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:75%;")}}
                         {% endif %}
 
                         <br>

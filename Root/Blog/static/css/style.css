@@ -126,7 +126,7 @@ body::-webkit-scrollbar-thumb
 
 }
 #nav-item3 {
-    animation: minusRightMarginSmooth 0.2s forwards;
+
     margin-top: 10px;
     color: rgb(241, 241, 241) !important;
 
@@ -136,7 +136,7 @@ body::-webkit-scrollbar-thumb
 
 
 #nav-item2 {
-    animation: minusLeftMarginSmooth 0.2s forwards;
+
     margin-right: 10px;
     border-right-style: solid;
     border-right-color: rgb(226, 226, 226);
@@ -1111,11 +1111,31 @@ UPLOAD SIMILAR ITEMS MENU
 
 
 #form-title-text {
-
+    font-size: 16px;
+    margin-top: 0.5em;
+    margin-bottom: 0.2em;
     float:left;
     width: auto;
     margin-left: 4px;
     background-color: #001141c0;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: white;
+    width: 50%;
+    text-align: left;
+    border-radius: 2px;
+}
+
+
+#form-title-text-password {
+    font-size: 16px;
+    margin-top: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.2em;
+    float:left;
+    width: auto;
+    margin-left: 4px;
+    background-color: #b87318c0;
     padding-left: 5px;
     padding-right: 5px;
     color: white;
