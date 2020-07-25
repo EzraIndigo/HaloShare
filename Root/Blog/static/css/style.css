@@ -14,6 +14,12 @@ body {
 }
 
 
+/** 
+SCROLL BARS
+----------------------------------------------------------------------------------
+
+*/
+
 body::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -33,6 +39,51 @@ body::-webkit-scrollbar-thumb
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: #555;
 }
+
+
+#cardContainer::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#cardContainer::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#cardContainer::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+#cardContainer-browse::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#cardContainer-browse::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#cardContainer-browse::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+
+
+/** -----------------------------------------------------------------*/
 
 .w3-bar,h1,button 
 {
@@ -345,7 +396,40 @@ fieldset {
       background-color: rgba(0, 0, 0, 0.493);
       min-width: 667px;
       margin-right: 0.5em;
+      overflow-y: scroll;
+      max-height: 860px;
   }
+
+  #panel-see-more {
+      float: center;
+      margin-left: 0em;
+      padding: 8px;
+      color: black;
+      font-size: 18px;
+      background-color: rgb(255, 172, 78);
+      border-radius: 2px;
+      cursor: pointer;
+  }
+
+  #see-more-b {
+    text-align: center;
+  }
+
+  #panel-see-more:hover {
+
+    background-color: rgb(255, 198, 133);
+  }
+  #cardContainer-browse {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+    background-color: rgba(0, 0, 0, 0.493);
+    min-width: 667px;
+    margin-right: 0.5em;
+    overflow-y: scroll;
+    max-height: 1200px;
+}
+
 
   #contentFilter {
     height: 500px;
@@ -354,7 +438,7 @@ fieldset {
     font-weight: 400;
     color: #dadada;
     padding: 10px;
-
+    max-height: 800px;
     background-color: rgb(59, 59, 59);
 
     
@@ -648,18 +732,20 @@ CONTENT CARDS FONT PAGE --------------------------------------
 
 
 #card-container-title {
-    margin-top: 6px;
+    margin-top: 0.5em;
     margin-left: 1em;
     margin-right: 1em;
     margin-bottom: 1em;
     font-size: 22px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.616);
+    background-color: rgb(56, 56, 56);
     padding: 4px;
     padding-left: 10px;
     border-bottom: 4px solid;
     border-color: rgb(155, 203, 243);
 }
+
+
 
 #card-info-uploader {
     font-size: 13px;
