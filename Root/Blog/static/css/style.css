@@ -63,22 +63,66 @@ body::-webkit-scrollbar-thumb
     padding-bottom: 2px;
 }
 
+@media screen and (max-width: 741px) {
+
+    #content-body {
+        margin-top: 5em;
+        
+    }
+
+    #nav-item2 {
+        height: 100px;
+    }
+
+    #panel3 {
+        top: 160px !important;
+    }
+
+    #entire-nav-bar {
+        min-width: 550px;
+    }
+
+
+  }
+
+
 
 #nav-item {
     margin-top: 10px;
-    color: rgb(241, 241, 241) !important;
-
+    color:rgb(236, 236, 236);
+    border-radius: 1px;
 }
+
+#nav-item:hover {
+    color: rgb(255, 255, 255) !important;
+    background-color: rgb(255, 172, 78) !important;
+}
+
+#qs-button {
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 1em;
+    color:rgb(236, 236, 236);
+    border-radius: 1px;
+}
+
+
+#qs-button:hover {
+    color: rgb(255, 255, 255) !important;
+    background-color: rgb(255, 172, 78) !important;
+}
+
+
 #nav-item-logout {
     margin-top: 10px;
-    color:black;
-    background-color: rgb(241, 241, 241) !important;
+    color:rgb(236, 236, 236);
+    border-radius: 1px;
 
 }
 #nav-item-logout:hover{
     margin-top: 10px;
-    color: rgb(241, 241, 241) !important;
-    background-color: coral !important;
+    color: rgb(255, 255, 255) !important;
+    background-color: rgb(255, 172, 78) !important;
 
 }
 #nav-item3 {
@@ -88,10 +132,7 @@ body::-webkit-scrollbar-thumb
 
 }
 
-#nav-item:hover {
-    animation: navbarItemHover 1.5s forwards; 
-    color: black !important;
-}
+
 
 
 #nav-item2 {
@@ -125,10 +166,11 @@ fieldset {
       animation: addLeftMarginSmooth 0.5s forwards;
     }
 
-    #nav-item3 {
+    #search-box-button {
        
         animation: addRightMarginSmooth 0.5s forwards;
     }
+
 
     #center-container {
         animation: CenterResizeAddLargeScreen 0.2s forwards;
@@ -137,16 +179,31 @@ fieldset {
   }
 
 
-  @media screen and (max-width: 720px) {
+    /* SQUISHING SEARCH BAR */
+  @media screen and (max-width: 1091px) {
 
     #nav-item3 {
-        width: 120px;
+        width: 150px;
         
     }
 
 
   }
 
+  /* HIDING SEARCH BAR ON SMALL SCREENS TO STOP NAVBAR OVERFLOW */
+  @media screen and (max-width: 974px) {
+
+    #nav-item3 {
+        display: none;
+        
+    }
+
+    #qs-button {
+        display: none;
+    }
+
+
+  }
 
   @media screen and (max-width: 610px) {
 
@@ -284,9 +341,10 @@ fieldset {
   #cardContainer {
       padding-top: 1em;
       padding-bottom: 1em;
-      background-color: rgba(60, 167, 255, 0.363);
       box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
       background-color: rgba(0, 0, 0, 0.493);
+      min-width: 667px;
+      margin-right: 0.5em;
   }
 
   #contentFilter {
@@ -465,6 +523,7 @@ PROFILE STUFF --------------------------------------
   #profile-content {	
     max-width: 370px;	
     min-width: 370px;	
+    max-height: 870px;	
     background-color: rgba(0, 0, 0, 0.493);	
     width: 100%;	
     margin-right: 2em;	
@@ -588,7 +647,19 @@ CONTENT CARDS FONT PAGE --------------------------------------
   }
 
 
-
+#card-container-title {
+    margin-top: 6px;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    font-size: 22px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.616);
+    padding: 4px;
+    padding-left: 10px;
+    border-bottom: 4px solid;
+    border-color: rgb(155, 203, 243);
+}
 
 #card-info-uploader {
     font-size: 13px;
