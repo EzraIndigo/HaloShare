@@ -114,6 +114,12 @@ body::-webkit-scrollbar-thumb
     padding-bottom: 2px;
 }
 
+#nav-bar-icon {
+    width: 50px;
+    padding: 5px;
+    margin-left: 0.4em;
+}
+
 @media screen and (max-width: 741px) {
 
     #content-body {
@@ -187,7 +193,7 @@ body::-webkit-scrollbar-thumb
 
 
 #nav-item2 {
-
+    padding-left: 0px !important;
     margin-right: 10px;
     border-right-style: solid;
     border-right-color: rgb(226, 226, 226);
@@ -213,25 +219,26 @@ fieldset {
 
 
 @media screen and (min-width: 1724px) {
-    #nav-item2 {
-      animation: addLeftMarginSmooth 0.5s forwards;
+    #nav-bar-icon {
+        margin-left: 15%;
     }
 
     #search-box-button {
        
-        animation: addRightMarginSmooth 0.5s forwards;
+        margin-right: 15%;
     }
 
 
     #center-container {
-        animation: CenterResizeAddLargeScreen 0.2s forwards;
+        margin-left: 15%; 
+        margin-right: 15%; 
         height: auto;
     }
   }
 
 
     /* SQUISHING SEARCH BAR */
-  @media screen and (max-width: 1091px) {
+  @media screen and (max-width: 1120px) {
 
     #nav-item3 {
         width: 150px;
@@ -242,7 +249,7 @@ fieldset {
   }
 
   /* HIDING SEARCH BAR ON SMALL SCREENS TO STOP NAVBAR OVERFLOW */
-  @media screen and (max-width: 974px) {
+  @media screen and (max-width: 1004px) {
 
     #nav-item3 {
         display: none;
