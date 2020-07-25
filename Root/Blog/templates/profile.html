@@ -11,7 +11,11 @@
       <div id = "profile-container" class = "">
 
         <div class="w3-container" id = "profile-content">
-          <p id = "content-filter-title">{{current_user.username}}</p>
+          <div id = "profile-content-header" >
+            <p id = "profile-content-header-title" >{{current_user.username}}</p>
+            <p id = "profile-content-header-edit" >Edit</p>
+          </div>
+          
           <div id = "profile-content-img">
             <img id = "profile-img" src="./inc/img/user_profile_img/000000.jpg">
             <div id = "profile-img-detail-panel">

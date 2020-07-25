@@ -542,6 +542,8 @@ fieldset {
 
 }
 
+
+
 #content-filter-game {
     height: auto;
     color: white;
@@ -587,6 +589,47 @@ PROFILE STUFF --------------------------------------
     margin-top: 2em;
 }
 
+
+#profile-content-header {
+
+
+}
+
+#profile-content-header-title {
+
+    margin-top: 1em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.616);
+    border-bottom: 4px solid;
+    border-color: rgb(155, 203, 243);
+    padding: 4px;
+    padding-left: 10px;
+    font-size: 22px;
+    width: 82%;
+
+}
+
+
+#profile-content-header-edit {
+    margin-top: -3em;
+    float: right;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.616);
+    border-bottom: 4px solid;
+    border-color: rgb(255, 172, 78);
+    padding: 4px;
+    font-size: 22px;
+    width: 15%;
+    text-align: center;
+
+}
+
+#profile-content-header-edit:hover {
+    color: rgb(54, 54, 54);
+    border-color: rgb(238, 238, 238);
+    background-color:rgb(255, 172, 78);
+    cursor: pointer;
+}
 
 #panel4 { 
     margin-left: 8em;
@@ -658,17 +701,26 @@ PROFILE STUFF --------------------------------------
     padding-left: 10px;	
     font-size: 20px;	
     margin-bottom: 0em;	
+    margin-left: 2px;
 }	
 #profile-content-bio{	
-    color: rgb(230, 230, 230);	
-    padding-left: 14px;	
+    color: rgba(230, 230, 230, 0.959);	
+    padding-left: 14px;
+    margin-top: 5px;	
 }	
 #profile-content-pop-uploads {	
     padding: 4px;	
 }	
 #profile-content-pop-uploads a {	
+    font-size: 16px;
     margin-bottom: 1em;	
     padding: 1em;	
+}
+
+
+#profile-content-pop-uploads a:hover {	
+    color: rgb(255, 172, 78);
+    
 }	
 #profile-content-search {	
     padding: 5px;	
