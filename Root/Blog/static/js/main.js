@@ -11,7 +11,7 @@ function myFunction() {
 
 
 
-function getBio() {
+function getSetBio() {
   let currentBio = document.getElementById("getBio").dataset.geocode;
   console.log(currentBio)
 
