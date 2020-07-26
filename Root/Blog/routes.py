@@ -5,7 +5,7 @@ from datetime import datetime
 from flask import Flask, render_template, flash, redirect, send_from_directory, request, url_for
 from flask_login import login_user, current_user, logout_user
 from Blog import app, db, bcrypt
-from Blog.forms import Sign_Up_Form, Login_Form, New_Post_Form
+from Blog.forms import Sign_Up_Form, Login_Form, New_Post_Form, Edit_Profile_Form
 from Blog.model import User, Post
 
 # image
@@ -354,6 +354,28 @@ def logout():
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static/fav'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+
+
+
+
+
+@app.route('/edit_profile', methods = ['GET', 'POST'])
+def edit_profile():
+    if not current_user.is_authenticated:
+        return redirect("/home")
+    else:
+        form = Edit_Profile_Form()
+        if request.method == 'POST':
+            print('check data and submit')
+        else:
+            print('get data from db and add to form')
+    return render_template('edit_profile.html', title='edit profile', form=form)
+
+
+
+
+
 
 # Notes
 #

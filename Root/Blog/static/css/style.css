@@ -1293,3 +1293,97 @@ UPLOAD SIMILAR ITEMS MENU
 .form-group {
     height: auto;
 }
+
+
+
+/**
+ EDIT PROFILE CSS SECTION
+
+*/
+
+
+#edit-profile-container {
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+    background-color: rgba(0, 0, 0, 0.493);
+    min-width: 1020px;
+    max-width: 1020px;
+    margin-right: 0.5em;
+    max-height: 1500px;
+}
+
+#edit-profile-content-box {
+    height: auto;
+    color: rgb(41, 41, 41);
+    background-color: rgba(255, 255, 255, 0.884);
+    padding: 1em;
+    margin-bottom: 1em;
+    width: 90%;
+    border-radius: 3px;
+
+}
+
+#edit-profile-content-header {
+    margin-top: 1em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.616);
+    border-bottom: 4px solid;
+    border-color: rgb(155, 203, 243);
+    padding: 4px;
+    padding-left: 10px;
+    font-size: 22px;
+    width: 97%;
+}
+
+#edit-profile-stats-box {
+    height: auto;
+    color: rgb(41, 41, 41);
+    background-color: rgba(255, 255, 255, 0.884);
+    padding: 0.5em;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    margin-bottom: 0em;
+    width: auto;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-left: 2em;
+
+}
+
+#form-content-header {
+    text-align: left;
+    border-radius: 3px;
+    background-color: rgba(212, 212, 212, 0.884);
+    width: 97%;
+    padding: 4px;
+    font-size: 22px;
+    height: 40px;
+    margin: 0em;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.466);
+}
+
+#form-content-text {
+    height: 40px;
+    margin: 0.1em;
+    padding: 4px;
+    font-size: 20px;
+}
+
+
+.about-form {
+    margin-top: 0.5em;
+    width: 95%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+
+

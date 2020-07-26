@@ -1,0 +1,99 @@
+{% extends "default.html" %}
+{% block content %}
+<div>
+  <div id = 'center-container'>
+    <div class="w3-padding-16"></div>
+      <a id = "panel-1">// Logged in as:  {{current_user.username}}</a> 
+      <br> 
+      <br>
+      <br>
+      <a id = "panel2" style = "box-shadow: none;">// Edit Account/Profile Details:</a>
+      
+      <div id = "edit-profile-container" class = "w3-container">
+        <form method="POST" action='' enctype="multipart/form-data" class="w3-cell-row">
+            {{ form.hidden_tag() }}
+
+
+        <div class="w3-container" id = "">
+
+                <p id = 'edit-profile-content-header'>Profile Photo</p>
+                <div id="profile-content-img">
+                    <img id="profile-img" src="static/img/placeholder.jpeg">
+                    <div id = "edit-profile-stats-box">
+                        <p>Posted Files: {{current_user.posted_count}}</p>
+                        <p>Visted: {{current_user.visit_count}}</p>
+                        <p>Joined: {{time_con(current_user.tl)}}</p>
+                        <p>Last Post: NULL</p>
+                        <p>File downloads: {{current_user.total_downloads}}</p>
+                      </div>
+                </div>
+                {% if form.file.errors %}
+                {{form.file(class="is-invalid")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.file.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                <div>
+                {{form.file.label(class="h4")}}
+                <br>
+                {{form.file()}}
+                </div>
+                {% endif %}
+                <p id = "edit-profile-content-header" >Profile Details : </p>
+                <div id = "edit-profile-content-box">
+
+                        <p id = "form-content-header">Profile Name:</p>
+                        <p id = "form-content-text"> {{current_user.username}}</p>
+                
+                        <p id = "form-content-header">About/Bio</p>
+                        {% if form.about.errors %}
+                            {{form.about(class="is-invalid")}}
+                                <div class="invalid-feedback">
+                                    {% for error in form.username.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                        {% else %}
+                            {{form.about(class="about-form w3-hide-small w3-padding-medium")}}
+                        {% endif %}
+                
+                    </div>
+ 
+     
+
+        
+              <div id = "edit-profile-content-box">
+                <p id = "form-content-header">Pinned Uploads</p>
+                <div id = "profile-content-pop-uploads">
+                <a href = "#"> DROPDOWN BOX OF USER's UPLOADS</a>
+                <br>
+                <a href = "#"> DROPDOWN BOX OF USER's UPLOADS</a>
+                <br>
+                <a href = "#"> DROPDOWN BOX OF USER's UPLOADS</a>
+                <br>
+                <a href = "#"> DROPDOWN BOX OF USER's UPLOADS</a>
+                <br>
+              </div>
+              </div>
+              <p id = "edit-profile-content-header" >Account Details: </p>
+              <div id = "edit-profile-content-box">
+
+                <p id = "form-content-header">Account Email: </p>
+                <p id = "form-content-text"> {{current_user.email}}</p>
+                <p id = "form-content-header">Account Password: </p>
+                <p id = "form-content-text"> {{current_user.Password}}</p>
+                </div>
+            </div>
+        </form>
+
+  </div>
+    
+
+</div>
+  </div>
+</div>
+
+
+{% endblock content %}

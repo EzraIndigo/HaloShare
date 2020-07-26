@@ -18,7 +18,7 @@ class User(db.Model, UserMixin):
     last_login = db.Column(db.DateTime(),default=datetime.utcnow, onupdate=datetime.utcnow)
     #other
     visit_count = db.Column(db.Integer,default=0)
-    about = db.Column(db.VARCHAR(),default="Hello, this is a test bio. I like Halo.")
+    about = db.Column(db.VARCHAR(),default="Welcome to my Profile and Fileshare!")
     posted_count = db.Column(db.Integer,default=0)
     total_downloads = db.Column(db.Integer,default=0)
     #photo

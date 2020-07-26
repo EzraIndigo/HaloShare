@@ -3,7 +3,7 @@ from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired
 from werkzeug.datastructures import CombinedMultiDict
 #
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField,BooleanField
+from wtforms import StringField, PasswordField, HiddenField, SubmitField, BooleanField, TextAreaField,BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from wtforms.widgets import TextArea
 from Blog.model import User
@@ -48,4 +48,15 @@ class New_Post_Form(FlaskForm):
     submit = SubmitField('Post')
     image = FileField('Thumbnail upload')
     file = FileField('File upload')
+
+
+class Edit_Profile_Form(FlaskForm):
+    username = HiddenField('Username', validators=[DataRequired()])
+    email = StringField('Email', validators=[Email()])
+    about = TextAreaField('About')
+    pinned_uploads = StringField('Pinned')
+    submit = SubmitField('Post')
+    user_photo = FileField("Thumbnail upload")
+    file = FileField('File upload')
+
 
