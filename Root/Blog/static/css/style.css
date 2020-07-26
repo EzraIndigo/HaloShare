@@ -1304,34 +1304,37 @@ UPLOAD SIMILAR ITEMS MENU
 
 
 #edit-profile-container {
-    margin-top: 1em;
+    margin-top: 0.4em;
     padding-top: 1em;
     padding-bottom: 1em;
-    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
-    background-color: rgba(0, 0, 0, 0.493);
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.075);
+    background-color: rgba(206, 206, 206, 0.788);
     min-width: 1020px;
     max-width: 1020px;
     margin-right: 0.5em;
     max-height: 1500px;
+    border-top: 6px solid;
+    border-color: rgb(155, 202, 243);
 }
 
 #edit-profile-content-box {
     height: auto;
     color: rgb(41, 41, 41);
-    background-color: rgba(255, 255, 255, 0.884);
+    background-color: rgba(247, 247, 247, 0.884);
     padding: 1em;
     margin-bottom: 1em;
     width: 90%;
-    border-radius: 3px;
+    border-radius: 2px;
 
 }
 
 #edit-profile-content-header {
+    font-weight: 600;
     margin-top: 1em;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.616);
+    color: rgb(56, 56, 56);
+    background-color: rgba(167, 167, 167, 0.863);
     border-bottom: 4px solid;
-    border-color: rgb(155, 203, 243);
+    border-color: rgb(121, 121, 121);
     padding: 4px;
     padding-left: 10px;
     font-size: 22px;
@@ -1340,7 +1343,7 @@ UPLOAD SIMILAR ITEMS MENU
 
 #edit-profile-stats-box {
     height: auto;
-    color: rgb(41, 41, 41);
+    color: rgb(53, 53, 53);
     background-color: rgba(255, 255, 255, 0.884);
     padding: 0.5em;
     padding-top: 0em;
@@ -1354,22 +1357,24 @@ UPLOAD SIMILAR ITEMS MENU
 }
 
 #form-content-header {
+    color: rgb(37, 37, 37);
     text-align: left;
     border-radius: 3px;
     background-color: rgba(212, 212, 212, 0.884);
     width: 97%;
     padding: 4px;
-    font-size: 22px;
+    font-size: 20px;
     height: 40px;
     margin: 0em;
     border-bottom: 2px solid rgba(0, 0, 0, 0.466);
 }
 
 #form-content-text {
+    color: rgb(70, 70, 70);
     height: 40px;
     margin: 0.1em;
     padding: 4px;
-    font-size: 20px;
+    font-size: 19px;
 }
 
 
@@ -1387,4 +1392,14 @@ UPLOAD SIMILAR ITEMS MENU
 }
 
 
+#file-upload {
+    margin-top: -15px;
+}
+
+#upload-button {
+    border-color: white;
+    background-color: gray;
+    color: white;
+    font-size: 16px;
+}
 

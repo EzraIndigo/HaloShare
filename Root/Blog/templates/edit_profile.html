@@ -1,5 +1,6 @@
 {% extends "default.html" %}
 {% block content %}
+
 <div>
   <div id = 'center-container'>
     <div class="w3-padding-16"></div>
@@ -18,7 +19,7 @@
 
                 <p id = 'edit-profile-content-header'>Profile Photo</p>
                 <div id="profile-content-img">
-                    <img id="profile-img" src="static/img/placeholder.jpeg">
+                    <img id="profile-img" src="static/img/placeholder.jpeg" style="height: 188px;">
                     <div id = "edit-profile-stats-box">
                         <p>Posted Files: {{current_user.posted_count}}</p>
                         <p>Visted: {{current_user.visit_count}}</p>
@@ -35,10 +36,10 @@
                         {% endfor %}
                     </div>
                 {% else %}
-                <div>
+                <div id = "file-upload">
                 {{form.file.label(class="h4")}}
                 <br>
-                {{form.file()}}
+                {{form.file(id = "upload-button")}}
                 </div>
                 {% endif %}
                 <p id = "edit-profile-content-header" >Profile Details : </p>
@@ -46,7 +47,7 @@
 
                         <p id = "form-content-header">Profile Name:</p>
                         <p id = "form-content-text"> {{current_user.username}}</p>
-                
+                        <div id = "getBio" data-geocode= '{{current_user.about}}' ></div>
                         <p id = "form-content-header">About/Bio</p>
                         {% if form.about.errors %}
                             {{form.about(class="is-invalid")}}
@@ -95,5 +96,8 @@
   </div>
 </div>
 
+<script>
+    getBio();
+</script>
 
 {% endblock content %}

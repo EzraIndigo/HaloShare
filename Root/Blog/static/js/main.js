@@ -7,3 +7,14 @@ function myFunction() {
       x.className = x.className.replace(" w3-show", "");
     }
   }
+
+
+
+
+function getBio() {
+  let currentBio = document.getElementById("getBio").dataset.geocode;
+  console.log(currentBio)
+
+  let formTextArea = document.getElementById("about");
+  formTextArea.value = currentBio;
+}
