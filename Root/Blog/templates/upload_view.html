@@ -1,40 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<title>Haloshare</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../static/css/style.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<script src = "./inc/js/main.js"></script>
-
-<body>
-
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-card w3-left-align w3-large">
-    
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="index.html" id = "nav-item2" class="w3-bar-item w3-padding-medium">117Share</a>
-    <a href="browse.html" id = "nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium ">Browse Files</a>
-    <a href="#" id = "nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium ">Login</a>
-    <input id = "nav-item3" type="text" class="w3-bar-item w3-input w3-hide-small w3-padding-medium w3-right " placeholder="Quicksearch...">
-    <a href="#" id = "nav-item" class="w3-bar-item w3-button w3-hide-small w3-padding-medium w3-right"><i class="fa fa-search"></i></a>
-  </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Browse Files</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Login</a>
-
-  </div>
-</div>
-
-<!-- Header -->
-
+{% extends "default.html" %}
+{% block content %}
 
 <!-- Front Page Halo Content -->
 
@@ -50,12 +15,12 @@
       <div id = "upload-container" class = "">
         <div id = "upload-img-container">
           <a id = "upload-title"> Halo 3 Classic Jenga v6</a>
-          <img id = "upload_img" src="./inc/img/user_upload/0000.jpg" >
+          <img id = "upload_img" src="./inc/img/user_upload/0000.jpg" onerror= HandleUploadImgError(this) >
           <div id = "upload-gallery-thumb">
-            <img id = "upload-thumb" src= "inc/img/user_upload/0000.jpg" class = "thumb-active">
-            <img id = "upload-thumb" src= "inc/img/user_upload/0100.jpg" class = "">
-            <img id = "upload-thumb" src= "inc/img/user_upload/0200.jpg" class = "">
-            <img id = "upload-thumb" src= "inc/img/user_upload/0200.jpg" class = "">
+            <img id = "upload-thumb" src= "inc/img/user_upload/0000.jpg"  class = "thumb-active" onerror= HandleUploadImgError(this)>
+            <img id = "upload-thumb" src= "inc/img/user_upload/0100.jpg" class = "" onerror= HandleUploadImgError(this)>
+            <img id = "upload-thumb" src= "inc/img/user_upload/0200.jpg" class = "" onerror= HandleUploadImgError(this)>
+            <img id = "upload-thumb" src= "inc/img/user_upload/0200.jpg" class = "" onerror= HandleUploadImgError(this)>
           </div>
         </div>
 
@@ -63,10 +28,10 @@
           <a id = "panel5">Created By & File Information</a> <br>
           <div id = "user-uploader-bar">
             
-            <img id = "user_img_card" src = "inc/img/user_profile_img/000000.jpg">
+            <img id = "user_img_card" src = "inc/img/user_profile_img/000000.jpg " onerror= HandleImgError(this)>
             <div id = "card-prof-all">
             <a id = "user_id_card">SkyFlexV</a> <br>
-            <a id = "user_info_card">(Grunt)</a> 
+            <a id = "user_info_card">Level: Grunt</a> 
             <a id = "user_info_card">Posts: 04</a> 
             <a id = "user_info_card">Downloads: 15</a>
           </div>
@@ -134,7 +99,7 @@
         <div class="w3-row-padding w3-hide-medium" >
           <div class=" w3-container w3-margin-bottom" id = "single-card-entire">
             <!--CARD IMG-->
-            <img src="./inc/img/user_upload/0000.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+            <img src="./inc/img/user_upload/0000.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity" onerror= HandleUploadImgError(this)>
             <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
              <!--CARD TAGS-->
               <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo Reach</a>
@@ -161,7 +126,7 @@
       <div class="w3-row-padding w3-hide-medium" >
         <div class=" w3-container w3-margin-bottom" id = "single-card-entire">
           <!--CARD IMG-->
-          <img src="./inc/img/user_upload/0000.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+          <img src="./inc/img/user_upload/0000.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity" onerror= HandleUploadImgError(this)>
           <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
            <!--CARD TAGS-->
             <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo Reach</a>
@@ -189,7 +154,7 @@
     <div class="w3-row-padding w3-hide-medium" >
       <div class=" w3-container w3-margin-bottom" id = "single-card-entire">
         <!--CARD IMG-->
-        <img src="./inc/img/user_upload/0000.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <img src="./inc/img/user_upload/0000.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity" onerror= HandleUploadImgError(this)>
         <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
          <!--CARD TAGS-->
           <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo Reach</a>
@@ -217,7 +182,7 @@
   <div class="w3-row-padding w3-hide-medium" >
     <div class=" w3-container w3-margin-bottom" id = "single-card-entire">
       <!--CARD IMG-->
-      <img src="./inc/img/user_upload/0000.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <img src="./inc/img/user_upload/0000.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity" onerror= HandleUploadImgError(this)>
       <div class="w3-container w3-theme-d3" id = "card-bottom-wrap">
        <!--CARD TAGS-->
         <a id = 'upload-tag-game' class = "w3-tag w3-round  w3-bar-item"> Halo Reach</a>
@@ -249,7 +214,4 @@
 </div>
 
 
-
-
-</body>
-</html>
+{% endblock content %}

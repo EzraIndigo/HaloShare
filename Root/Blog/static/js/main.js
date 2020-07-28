@@ -25,3 +25,12 @@ function HandleImgError(source) {
   source.onerror = "";
   return true;
 }
+
+
+function HandleUploadImgError(source) {
+  source.src = "../static/img/upload_placeholder.jpg";
+  source.onerror = "";
+  return true;
+}
+
+

@@ -373,6 +373,9 @@ def edit_profile():
     return render_template('edit_profile.html', title='edit profile', form=form)
 
 
+@app.route('/upload_view', methods = ['GET', 'POST'])
+def uploader_view():
+    return render_template('/upload_view.html', title='view post')
 
 
 

@@ -13,6 +13,10 @@ body {
     flex-direction: column;
 }
 
+#footer {
+
+}
+
 
 /** 
 SCROLL BARS
@@ -506,19 +510,7 @@ fieldset {
     margin-right: 1em;
 }
 
-#footer {
-    font-family: "Lato", sans-serif;
-    font-size: 18px;
-    color: white;
-    text-align: center;
-    bottom: 0px;
-    position: fixed;
-    height: 100px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.829);
-    flex-shrink: 0;
-    box-shadow: 0px -5px 8px rgba(128, 128, 128, 0.37);
-}
+
 
 
 #browse-container {
@@ -946,8 +938,7 @@ VIEWING FILE UPLOAD VIEW CSS
     width: 100%;	
     color: white;	
     background-color: rgba(0, 0, 0, 0.616);	
-    border-bottom: 4px solid;	
-    border-color: rgb(155, 203, 243);	
+	
 }	
 #upload-img-container {	
     min-width: 825px;
@@ -1054,6 +1045,21 @@ VIEWING FILE UPLOAD VIEW CSS
     background-color: rgba(0, 0, 0, 0.493);	
     padding: 1em;	
   }	
+
+  @media screen and (max-width: 1330px) {	
+    #download-container {
+        margin-left: 2em;
+    }
+
+    #upload-similar-items-menu {
+        margin-left: 2em !important;
+
+    }
+
+  }	
+
+
+
   #download-button {	
         margin-left: 0em;
         margin-bottom: 1em;	
@@ -1210,6 +1216,7 @@ UPLOAD SIMILAR ITEMS MENU
     min-width: 350px;
     background-color: rgba(0, 0, 0, 0.493);
     overflow-y: auto;
+    margin-bottom: 5em;
 }
 
 /* custom scrollbar */
