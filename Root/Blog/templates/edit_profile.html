@@ -19,7 +19,7 @@
 
                 <p id = 'edit-profile-content-header'>Profile Photo</p>
                 <div id="profile-content-img">
-                    <img id="profile-img" src="static/img/placeholder.jpeg" style="height: 188px;">
+                    <img id="profile-img" src="static/img/placeholder.jpeg" style="height: 188px;" onerror= HandleImgError(this)/>
                     <div id = "edit-profile-stats-box">
                         <p>Posted Files: {{current_user.posted_count}}</p>
                         <p>Visted: {{current_user.visit_count}}</p>
@@ -106,6 +106,8 @@
                 <p id = "form-content-text"> {{current_user.email}}</p>
                 <p id = "form-content-header">Account Password: </p>
                 <p id = "form-content-text"> {{current_user.Password}}</p>
+                <p id = "form-content-header">Delete Account</p>
+                <p id = "form-content-text">Delete</p>
                 </div>
             </div>
         </form>

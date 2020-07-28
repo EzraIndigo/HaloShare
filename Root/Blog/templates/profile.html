@@ -17,7 +17,7 @@
           </div>
           
           <div id = "profile-content-img">
-            <img id = "profile-img" src="./inc/img/user_profile_img/000000.jpg">
+            <img id = "profile-img" src="./inc/img/user_profile_img/000000.jpg" onerror= HandleImgError(this)>
             <div id = "profile-img-detail-panel">
               <p>Posted Files: {{current_user.posted_count}}</p>
               <p>Visted: {{current_user.visit_count}}</p>

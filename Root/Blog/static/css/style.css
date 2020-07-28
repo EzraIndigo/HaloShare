@@ -543,10 +543,33 @@ fieldset {
     color: white;
     background-color: rgba(0, 0, 0, 0.616);
     padding: 4px;
-    padding-left: 10px;
+    text-align: center;
     border-bottom: 4px solid;
     border-color: rgb(155, 203, 243);
 
+}
+
+
+#content-filter-submit-new-pref {
+    text-align: center;
+    font-size: 18px;
+    color: rgb(39, 39, 39);
+    background-color: rgba(240, 240, 240, 0.89);
+    padding: 4px;
+    margin-right: 11px;
+    margin-left: 11px;
+    border-radius: 2px;
+    border: 1px solid;
+    border-color: rgb(75, 75, 75);
+
+}
+
+
+#content-filter-submit-new-pref:hover {
+    background-color: rgba(255, 255, 255, 0.945);
+    color: black;
+    cursor: pointer;
+    border-color: black;
 }
 
 
@@ -719,11 +742,11 @@ PROFILE STUFF --------------------------------------
 #profile-content-pop-uploads {	
     padding: 4px;	
 }	
-#profile-content-pop-uploads a {	
-    font-size: 16px;
-    margin-bottom: 1em;	
-    padding: 1em;	
-}
+
+#profile-content-pop-uploads select {	
+    margin-top: 8px;	
+}	
+
 
 
 #profile-content-pop-uploads a:hover {	

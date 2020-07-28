@@ -18,3 +18,10 @@ function getSetBio() {
   let formTextArea = document.getElementById("about");
   formTextArea.value = currentBio;
 }
+
+
+function HandleImgError(source) {
+  source.src = "../static/img/placeholder.jpeg";
+  source.onerror = "";
+  return true;
+}
