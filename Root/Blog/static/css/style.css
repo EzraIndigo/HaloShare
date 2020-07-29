@@ -97,9 +97,17 @@ body::-webkit-scrollbar-thumb
 }
 
 .alert-danger{
-    
+    color: red;
+
 }
 
+.alert-success{
+    color: green;
+}
+
+.invalid-feedback {
+    
+}
 /** --------------------------------------------------------------------------*/
 
 .w3-bar,h1,button 

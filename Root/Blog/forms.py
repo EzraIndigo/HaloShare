@@ -11,11 +11,11 @@ from Blog.model import User
 import re
 
 class Sign_Up_Form(FlaskForm):
-    username = StringField('username', validators=[DataRequired(),Length(min=4, max=25)])
-    email = StringField('email', validators=[DataRequired(),Email()])
-    password = PasswordField('password', validators=[DataRequired(),Length(min=8)])
-    check_password = PasswordField('confirm password', validators=[DataRequired(),EqualTo('password')])
-    submit = SubmitField('sign up')
+    username = StringField('Username', validators=[DataRequired(),Length(min=4, max=25)])
+    email = StringField('Email', validators=[DataRequired(),Email()])
+    password = PasswordField('Password', validators=[DataRequired(),Length(min=8)])
+    check_password = PasswordField('Confirm password', validators=[DataRequired(),EqualTo('Password')])
+    submit = SubmitField('Sign up')
 
     file = FileField('Thumbnail upload')
     
