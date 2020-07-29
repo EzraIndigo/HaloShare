@@ -90,23 +90,36 @@ body::-webkit-scrollbar-thumb
 
 #form_alert {
 
+    display: flex;
+    margin-left: 0em;
+    font-size: 20px;
+    padding: 10px;
+    background-color: rgb(31, 31, 31);
+    width: auto;
+    padding-right: 17px;
+    border-bottom: 4px solid;
+    box-shadow: 3px 3px 8px rgba(31, 31, 31, 0.37);
+    margin-bottom: 0em;
 }
 
 .alert {
-
+background-color:rgb(31, 31, 31);
 }
 
 .alert-danger{
     color: red;
+    border-color: red;
 
 }
 
 .alert-success{
     color: green;
+    border-color: green;
+
 }
 
 .invalid-feedback {
-    
+
 }
 /** --------------------------------------------------------------------------*/
 
