@@ -39,7 +39,7 @@
                         <br>
                         {% if form.email.errors %}
                             {{form.email(class="w3-bar-item w3-input w3-hide-small w3-padding-medium is-invalid", style="width:75%;")}}
-                            <div id = "form-title-text" class="invalid-feedback">
+                            <div id = "form-title-text" class="w3-left invalid-feedback">
                                 {% for error in form.email.errors %}
                                     <span>{{ error }}</span>
                                 {% endfor %}
