@@ -24,8 +24,8 @@
                         {{form.username.label(class="w3-left" , id = "form-title-text")}}
                         <br>
                         {% if form.username.errors %}
-                            {{form.username(class="is-invalid")}}
-                                <div class="invalid-feedback">
+                            {{form.username(class="w3-bar-item w3-input w3-hide-small w3-padding-medium is-invalid", style="width:75%;")}}
+                                <div id = "form-title-text" class="invalid-feedback">
                                     {% for error in form.username.errors %}
                                         <span>{{ error }}</span>
                                     {% endfor %}
@@ -38,8 +38,8 @@
                         {{form.email.label(class="w3-left", id = "form-title-text")}}
                         <br>
                         {% if form.email.errors %}
-                            {{form.email(class="is-invalid")}}
-                            <div class="invalid-feedback">
+                            {{form.email(class="w3-bar-item w3-input w3-hide-small w3-padding-medium is-invalid", style="width:75%;")}}
+                            <div id = "form-title-text" class="invalid-feedback">
                                 {% for error in form.email.errors %}
                                     <span>{{ error }}</span>
                                 {% endfor %}
@@ -52,8 +52,8 @@
                         {{form.password.label(class="w3-left", id = "form-title-text-password")}}
                         <br>
                         {% if form.password.errors %}
-                        {{form.password(class="is-invalid")}}
-                            <div class="invalid-feedback">
+                        {{form.password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium is-invalid", style="width:75%;")}}
+                            <div id = "form-title-text" class="invalid-feedback">
                                 {% for error in form.password.errors %}
                                     <span>{{ error }}</span>
                                 {% endfor %}
@@ -66,8 +66,8 @@
                         {{form.check_password.label(class="w3-left", id = "form-title-text-password")}}
                         <br>
                         {% if form.check_password.errors %}
-                            {{form.check_password(class="is-invalid")}}
-                                <div class="invalid-feedback">
+                            {{form.check_password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium is-invalid", style="width:75%;")}}
+                                <div id = "form-title-text" class="invalid-feedback">
                                     {% for error in form.check_password.errors %}
                                         <span>{{ error }}</span>
                                     {% endfor %}
@@ -76,6 +76,7 @@
                             {{form.check_password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:75%;")}}
                         {% endif %}
 
+                        <br>
                         <br>
                         <p id="pnote" hidden>Note: Password must include 8 characters. 1 special character and 1 number.</p>
                         

@@ -442,7 +442,6 @@
     {% if post.private == true and post.user_id == current_user.user_id%}
       {% set title = ip_list(fdecrypt(post.title, current_user.priv_key))  %}
       {% set content = ip_list(fdecrypt(post.content, current_user.priv_key))  %}
-      
         <div style="color: white;">
           <a href="/post/{{post.post_id}}"><h1>{{title}} <span style="font-size:large;"> posted by {{post.author.username}}</span></h1></a>
           <p>{{content}}</p>
