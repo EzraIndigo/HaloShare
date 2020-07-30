@@ -13,6 +13,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(25), unique=True, nullable=False)
     email = db.Column(db.String(128), unique=True, nullable=False)
     password = db.Column(db.String(128), nullable=False)
+    tc_check = db.Column(db.Boolean, nullable=False)
     #times
     tl = db.Column(db.DateTime(),default=datetime.utcnow)
     last_login = db.Column(db.DateTime(),default=datetime.utcnow, onupdate=datetime.utcnow)

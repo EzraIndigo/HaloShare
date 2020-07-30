@@ -107,19 +107,26 @@ background-color:rgb(31, 31, 31);
 }
 
 .alert-danger{
-    color: red;
-    border-color: red;
+    color: red !important;
+    border-color: red !important;
 
 }
+.alert-danger-top{
+    color: red !important;
+    border-color: red !important;
 
+}
 .alert-success{
     color: green;
     border-color: green;
-
+}
+.alert-success-top{
+    color: green;
+    border-color: green;
 }
 
 .invalid-feedback {
-    background-color: #08121bb2 !important;
+    background-color:#880000b3 !important;
 }
 /** --------------------------------------------------------------------------*/
 

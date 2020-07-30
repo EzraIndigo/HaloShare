@@ -24,88 +24,90 @@
                         {{form.username.label(class="w3-left" , id = "form-title-text")}}
                         <br>
                         {% if form.username.errors %}
-                            {{form.username(class="w3-bar-item w3-input w3-hide-small w3-padding-medium is-invalid", style="width:75%;")}}
+                            {{form.username(class="w3-bar-item w3-input w3-hide-small w3-padding-medium is-invalid", style="width:50%;")}}
                                 <div id = "form-title-text" class="invalid-feedback">
                                     {% for error in form.username.errors %}
                                         <span>{{ error }}</span>
                                     {% endfor %}
                                 </div>
                         {% else %}
-                            {{form.username(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:75%;")}}
+                            {{form.username(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:50%;")}}
                         {% endif %}
 
                         <!-- Email -->
                         {{form.email.label(class="w3-left", id = "form-title-text")}}
                         <br>
                         {% if form.email.errors %}
-                            {{form.email(class="w3-bar-item w3-input w3-hide-small w3-padding-medium is-invalid", style="width:75%;")}}
+                            {{form.email(class="w3-bar-item w3-input w3-hide-small w3-padding-medium is-invalid", style="width:50%;")}}
                             <div id = "form-title-text" class="w3-left invalid-feedback">
                                 {% for error in form.email.errors %}
                                     <span>{{ error }}</span>
                                 {% endfor %}
                         </div>
                         {% else %}
-                            {{form.email(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:75%;")}}
+                            {{form.email(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:50%;")}}
                         {% endif %}
 
                         <!-- Password_one -->
                         {{form.password.label(class="w3-left", id = "form-title-text-password")}}
                         <br>
                         {% if form.password.errors %}
-                        {{form.password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium is-invalid", style="width:75%;")}}
+                        {{form.password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium is-invalid", style="width:50%;")}}
                             <div id = "form-title-text" class="invalid-feedback">
                                 {% for error in form.password.errors %}
                                     <span>{{ error }}</span>
                                 {% endfor %}
                             </div>
                         {% else %}
-                            {{form.password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:75%;")}}
+                            {{form.password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:50%;")}}
                         {% endif %}
 
                         <!-- Password_two -->
                         {{form.check_password.label(class="w3-left", id = "form-title-text-password")}}
                         <br>
                         {% if form.check_password.errors %}
-                            {{form.check_password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium is-invalid", style="width:75%;")}}
+                            {{form.check_password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium is-invalid", style="width:50%;")}}
                                 <div id = "form-title-text" class="invalid-feedback">
                                     {% for error in form.check_password.errors %}
                                         <span>{{ error }}</span>
                                     {% endfor %}
                                 </div>
+                                <br>
+                                <br>
                         {% else %}
-                            {{form.check_password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:75%;")}}
+                            {{form.check_password(class="w3-bar-item w3-input w3-hide-small w3-padding-medium", style="width:50%;")}}
                         {% endif %}
 
+                        <!-- Terms -->
+                            
+                            <div class="w3-left", id = "form-title-text">
+                                <p>I agree to the 
+                                    <span style="">
+                                        <a href="/terms">
+                                            terms and conditions
+                                        </a>
+                                    </span> 
+                                
+                                </p>
+                            </div>
+                            {{form.tc_check(class="w3-check", style="margin-left: 24px;margin-top: 19px;")}}
+
+                            {% if form.tc_check.errors %}
+                                <div id = "form-title-text" class="invalid-feedback">
+                                    {% for error in form.tc_check.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                <br><br>
+                            {% else %}
+                            {% endif %}
+
+                        <!-- Sign Up -->
                         <br>
                         <br>
-                        <p id="pnote" hidden>Note: Password must include 8 characters. 1 special character and 1 number.</p>
-                        
                         <div class="form-group">
                             {{ form.submit(class="w3-bar-item w3-button w3-padding-large")}}
-                        </div>
-                        
-                    </div>
-
-                    <!-- Image -->
-                    <div class="w3-container w3-cell w3-middle">
-                        <h3>Profile Photo</h3>
-                        <div id="profile-content-img">
-                            <img id="profile-img" src="static/img/placeholder.jpeg">
-                        </div>
-                        {% if form.file.errors %}
-                        {{form.file(class="is-invalid")}}
-                            <div class="invalid-feedback">
-                                {% for error in form.file.errors %}
-                                    <span>{{ error }}</span>
-                                {% endfor %}
-                            </div>
-                        {% else %}
-                        <div>
-                        {{form.file.label(class="h4")}}
-                        <br>
-                        {{form.file()}}
-                        </div>
-                        {% endif %}
+                        </div>   
                     </div>
 
 

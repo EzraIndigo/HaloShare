@@ -14,11 +14,10 @@ class Sign_Up_Form(FlaskForm):
     username = StringField('Username', validators=[DataRequired(),Length(min=4, max=25)])
     email = StringField('Email', validators=[DataRequired(),Email()])
     password = PasswordField('Password', validators=[DataRequired(),Length(min=8)])
-    check_password = PasswordField('Confirm password', validators=[DataRequired(),EqualTo('Password')])
+    check_password = PasswordField('Confirm password', validators=[DataRequired(),EqualTo('password')])
+    tc_check = BooleanField('I agree to the terms & conditions.',validators=[DataRequired()])
     submit = SubmitField('Sign up')
 
-    file = FileField('Thumbnail upload')
-    
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user:

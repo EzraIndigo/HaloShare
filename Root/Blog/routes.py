@@ -45,7 +45,17 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 # USER DIRECTORY
 
 def new_user_dir(input):
-
+#check if dir exists
+#if yes: 
+    #check if dir is empty
+    #if yes:
+        #delete
+        #create new folder
+    #if no:
+        #raise issue
+#if no:
+    #create
+    
     user_root = "/user/"
     print(input)
     user_path = user_root+input
@@ -113,14 +123,20 @@ def fdecrypt(input, client_key):
 @app.route("/")
 @app.route("/home")
 def home():
-    post = Post.query.all()
-    if not current_user.is_authenticated:
-        flash(f"We see you're not signed in. You can still view publicly available posts.\n Why not make an account?", 'danger')
-    return render_template('home.html', title='home', post=post)
+    #post = Post.query.all()
+    if current_user.is_authenticated:
+        flash(f"Look up here sir.", 'success-top')
+    else:
+        flash(f"We see you're not signed in. You can still view publicly available posts.\n Why not make an account?", 'danger-top')
+
+    #return render_template('home.html', title='home', post=post)
+    return render_template('home.html', title='home')
 
 
 @app.route("/profile")
 def profile():
+    if not current_user.is_authenticated:
+        return redirect("/")
     post = Post.query.all()
     return render_template('profile.html', title='profile', post=post)
 
@@ -153,7 +169,7 @@ def login():
             flash(f'Welcome back {form.username.data.title()}.', 'success')
             return redirect('/home')
         else:
-            flash(f'Wrong username or password.\n Please try again.', 'danger')
+            flash(f'Incorrect username or password.', 'danger')
 
     return render_template('login.html', title='login', form=form, storekey=storekey)
 
@@ -162,7 +178,7 @@ def login():
 def sign_up():
     if current_user.is_authenticated:
         return redirect("/home")
-    form = Sign_Up_Form(CombinedMultiDict((request.files, request.form)))
+    form = Sign_Up_Form()
 
     
     if form.validate_on_submit():
@@ -171,7 +187,7 @@ def sign_up():
 
         #---- User Directory ----
         if not new_user_dir(form.username.data):
-            flash(f'User Creation Issue. Please contact support. \n', 'warning')
+            flash(f'User Creation Issue. Please contact support. \n', 'danger')
         #---- User Image ----
 
         """
@@ -193,14 +209,12 @@ def sign_up():
 
         # --------------------------------------------------------------------------------------------ENCRYPTION--client key
         ckey = fkey(form.password.data)
-        user = User(username=form.username.data, email=hashed_email,password=hashed_password, priv_key=ckey)
+        user = User(tc_check=form.tc_check.data,username=form.username.data, email=hashed_email,password=hashed_password, priv_key=ckey)
         db.session.add(user)
         db.session.commit()
         flash(f'Account Created. \n Thank you. \nPlease login.', 'success')
         return redirect('/login')
     return render_template('sign_up.html', title='sign up', form=form)
-
-
 
 # POST ROUTE
 @app.route("/new_post", methods=['GET', 'POST'])
@@ -356,7 +370,9 @@ def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static/fav'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
-
+@app.route('/terms')
+def terms():
+    return render_template('terms.html')
 
 
 
